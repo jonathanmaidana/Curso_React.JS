@@ -1,7 +1,9 @@
+import NavBar from "./components/NavBar/NavBar";
+
 function App() {
   return (
     <div className="miApp">
-      <h1>Mi primer app</h1>
+      <NavBar />
     </div>
   );
 }

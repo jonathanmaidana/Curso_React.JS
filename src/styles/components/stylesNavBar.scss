@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------------- Header --------------------------------- */
+
+.navBar{
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items :center;
+    padding: 10px;
+
+    .logo{
+        font-size: 50px;
+    }
+
+    .navBar-search{
+        width: 25vw;
+        height: 30px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    &-nav{
+        display: flex;
+
+        ul{
+            list-style: none;
+    
+            li{
+                display: inline-block;
+                margin: 0 20px;
+                font-size: 20px;
+                cursor: pointer;
+                transition: .3s ease;
+
+                &:hover{
+                    color: #72c8c1;
+                }
+            }
+        }
+    }
+
+    &-icon button{
+        border: 1px solid #fff;
+        border-radius: 50px;
+        background-color: transparent;
+        padding: 10px;
+        margin: 0 20px;
+        transition: .3s ease;
+        cursor: pointer;
+        color: #fff;
+
+        &:hover{
+            color: #72c8c1;
+            border-color: #57bbb4;
+        }
+    }
+}
