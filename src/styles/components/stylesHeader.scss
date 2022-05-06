@@ -1,0 +1,106 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Montserrat:wght@500&display=swap');
+@import 'heading.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------------- Header --------------------------------- */
+.header{
+    background-color: #5c5c5cfb;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items :center;
+    padding: 10px;
+    height: 10vw;
+    font-family: 'Lato', sans-serif;
+
+    .logo{
+        font-size: 50px;
+        cursor: pointer;
+        transition: .3s ease;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover{
+            color: #72c8c1;
+        }
+    }
+
+    .header-search{
+        @extend .search;
+
+        .input-search{
+            @extend .search-content
+        }
+
+        div{
+            font-size: 1rem;
+            font-weight: 900;
+            background-color: #000;
+            color: #fff;
+            padding: 7px;
+            height: 45px;
+            cursor: pointer;
+        }
+    }
+
+    .material-icons{
+        line-height: inherit;
+    }
+
+    &-icon{
+        background-color: transparent;  
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+
+        li{
+            list-style: none;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .text_primary::after{
+            content: '|';
+            padding: 0px 10px;
+            display: inline-block;
+            }
+        
+
+        // &:hover{
+        //     color: #72c8c1;
+        //     border-color: #57bbb4;
+        // }
+    }
+}
+
+.navBar-nav{
+    display: flex;
+
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+
+        li{
+            display: inline-block;
+            margin: 0 20px;
+            cursor: pointer;
+            transition: .3s ease;
+
+            &:hover{
+                color: #73c7c0;
+            }   
+        }
+    }
+}

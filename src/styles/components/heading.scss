@@ -1,0 +1,18 @@
+.search{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.search-content{
+    width: 10vw;
+    height: 45px;
+    border: none;
+    padding: 10px;
+    
+
+    &:focus{
+        outline: none;
+    }
+}

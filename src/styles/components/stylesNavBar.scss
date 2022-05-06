@@ -1,63 +1,57 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-
-/* --------------------------------- Header --------------------------------- */
 
 .navBar{
     background-color: #000;
     color: #fff;
-    display: flex;
-    justify-content: space-evenly;
-    align-items :center;
-    padding: 10px;
+    padding: 0;
 
-    .logo{
-        font-size: 50px;
-    }
-
-    .navBar-search{
-        width: 25vw;
-        height: 30px;
-        padding: 5px;
-        border-radius: 5px;
-    }
-
-    &-nav{
+    .navBar-nav{
         display: flex;
+        justify-content: center;
+        height: 100%;
 
         ul{
-            list-style: none;
-    
+            display: flex;
+            flex-direction: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+
+
             li{
-                display: inline-block;
-                margin: 0 20px;
-                font-size: 20px;
-                cursor: pointer;
-                transition: .3s ease;
+                font-size: 1.1em;
+                list-style: none;
+                padding: 10px;
+                margin: 0 10px;
+                text-transform: uppercase;
 
                 &:hover{
-                    color: #72c8c1;
+                    background-color: #667;
+                    height:100%;
+                }
+
+                span{
+                    vertical-align: middle;
+                    margin: 5px;
                 }
             }
         }
     }
+}
 
-    &-icon button{
-        border: 1px solid #fff;
-        border-radius: 50px;
-        background-color: transparent;
-        padding: 10px;
-        margin: 0 20px;
-        transition: .3s ease;
-        cursor: pointer;
-        color: #fff;
+/* ------------------------ Color menu de hamburgesas ----------------------- */
+.navbar-light .navbar-toggler{
+    border: 2px solid #73c7c0;
+}
 
-        &:hover{
-            color: #72c8c1;
-            border-color: #57bbb4;
-        }
-    }
+.navbar-light .navbar-toggler:hover{
+    box-shadow: 0px 0px 5px 1px #73c7c0;
+}
+
+.navbar-light .navbar-toggler-icon{
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280115, 188, 192, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
