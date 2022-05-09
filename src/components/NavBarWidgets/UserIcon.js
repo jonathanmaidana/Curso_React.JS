@@ -1,6 +1,6 @@
 export default function UserIcon (){
     return (
-        <span class="material-icons">
+        <span className="material-icons">
             person
         </span>
     )

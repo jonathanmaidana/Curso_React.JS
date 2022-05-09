@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Montserrat:wght@500&display=swap');
-@import 'heading.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Montserrat:wght@500&family=Poppins:wght@600&display=swap');
+@import '_heading.scss';
+@import '_variablesFonts.scss';
 
 * {
     padding: 0;
@@ -9,25 +10,25 @@
 }
 
 /* --------------------------------- Header --------------------------------- */
-.header{
-    background-color: #5c5c5cfb;
-    color: #fff;
+.header{    
     display: flex;
     justify-content: space-evenly;
     align-items :center;
-    padding: 10px;
-    height: 10vw;
+    height: 18vw;
     font-family: 'Lato', sans-serif;
+    background-image: url(../../../public/images/banner-header.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     .logo{
-        font-size: 50px;
+        font-size: $header-font-size;
         cursor: pointer;
         transition: .3s ease;
-        color: #fff;
         text-decoration: none;
 
         &:hover{
-            color: #72c8c1;
+            color: $color-3;
         }
     }
 
@@ -35,25 +36,23 @@
         @extend .search;
 
         .input-search{
-            @extend .search-content
+            @extend .search-content;
         }
 
         div{
-            font-size: 1rem;
+            font-size: $h2-font-size;
             font-weight: 900;
-            background-color: #000;
-            color: #fff;
+            background-color: $background-dark;
+            display: flex;
+            justify-content: center;
+            align-items : center;
             padding: 7px;
-            height: 45px;
+            height: 100%;
             cursor: pointer;
         }
     }
 
-    .material-icons{
-        line-height: inherit;
-    }
-
-    &-icon{
+    &-text{
         background-color: transparent;  
         display: flex;
         flex-direction: row;
@@ -61,46 +60,36 @@
         padding: 0;
 
         li{
+            color: $text-color-bold;
             list-style: none;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1em;
+            font-weight: 600;
+            font-size: $h2-font-size;
             margin: 0;
             cursor: pointer;
+
+            &:hover{
+                text-decoration: underline;
+            }
         }
 
-        .text_primary::after{
+        .text-primary::after{
             content: '|';
             padding: 0px 10px;
             display: inline-block;
-            }
-        
-
-        // &:hover{
-        //     color: #72c8c1;
-        //     border-color: #57bbb4;
-        // }
+            color: $text-color-bold;
+        }
     }
 }
 
-.navBar-nav{
-    display: flex;
+/* ------------------------------- mediaquery ------------------------------- */
+@media only screen and (max-width: 768px){
+    .header{
+        height: 100%;
+        padding:20px;
+        flex-direction: column-reverse;
 
-    ul{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        font-size: 1em;
-
-        li{
-            display: inline-block;
-            margin: 0 20px;
-            cursor: pointer;
-            transition: .3s ease;
-
-            &:hover{
-                color: #73c7c0;
-            }   
+        .header-search{ 
+            height: 2.5rem;
         }
     }
 }

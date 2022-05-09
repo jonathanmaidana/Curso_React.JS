@@ -5,14 +5,13 @@
 }
 
 .navBar{
-    background-color: #000;
-    color: #fff;
+    background-color: $background-dark;
+    color: $text-color-light;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 
     .navBar-nav{
-        display: flex;
         justify-content: center;
-        height: 100%;
 
         ul{
             display: flex;
@@ -21,17 +20,17 @@
             margin: 0;
             padding: 0;
 
-
             li{
                 font-size: 1.1em;
                 list-style: none;
                 padding: 10px;
-                margin: 0 10px;
+                margin: 0 15px;
                 text-transform: uppercase;
+                cursor: pointer;
+                transition: .3s ease;
 
                 &:hover{
-                    background-color: #667;
-                    height:100%;
+                    color: $color-3;
                 }
 
                 span{
@@ -45,13 +44,35 @@
 
 /* ------------------------ Color menu de hamburgesas ----------------------- */
 .navbar-light .navbar-toggler{
-    border: 2px solid #73c7c0;
-}
+    border: 1px solid $text-color-light;
+    margin: 5px 0;
 
-.navbar-light .navbar-toggler:hover{
-    box-shadow: 0px 0px 5px 1px #73c7c0;
+    &:hover{
+        box-shadow: 0px 0px 5px 1px $color-3;
+        border: 1px solid $color-3;
+    }   
 }
 
 .navbar-light .navbar-toggler-icon{
-background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280115, 188, 192, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+    &:hover{
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280115, 188, 192, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+}
+
+/* ------------------------------- mediaquery 768px ------------------------------- */
+@media only screen and (max-width: 768px){
+    .navBar-nav ul{
+        flex-direction: column;
+        padding: 1.5rem !important;
+
+        li{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1rem !important;
+        }
+    }
 }

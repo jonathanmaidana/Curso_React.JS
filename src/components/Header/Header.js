@@ -1,3 +1,4 @@
+import React from 'react';
 import SearchIcon from '../NavBarWidgets/SearchIcon';
 
 export default function Header(){
@@ -9,16 +10,17 @@ export default function Header(){
                     <SearchIcon />
                 </div>
             </div>
-            <div className="logo">
-                LOGO
-            </div>
+                <div className="logo">
+                    LOGO
+                </div>
             <div> 
-                <ul className="header-icon">
-                    <li className="text_primary">
+                <ul className="header-text">
+                    <li>
                         Registrarme
                     </li>
+                    <span className="text-primary"></span>
                     <li>
-                        Ingresar
+                        Iniciar Sesión
                     </li>
                 </ul>
             </div>

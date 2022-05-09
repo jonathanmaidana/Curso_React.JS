@@ -1,7 +1,7 @@
 export default function CartIcon (){
     return (
-        <span class="material-icons">
-            shopping_cart
+        <span className="material-icons">
+            local_mall
         </span>
     )
 }

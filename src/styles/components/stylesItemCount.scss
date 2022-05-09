@@ -1,0 +1,24 @@
+.stock-container{ 
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items : center;
+
+        .stock-button{
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            font-weight: bold;
+            font: 1.2rem;
+        }
+    }
+
+    .submit-button {
+        @extend .css-button-fully-rounded--black
+    }
+}

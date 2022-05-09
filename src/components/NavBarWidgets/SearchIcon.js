@@ -1,6 +1,6 @@
 export default function SearchIcon () {
     return (
-        <span class="material-icons">
+        <span className="material-icons">
             search
         </span>
     )

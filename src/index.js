@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import './styles/components/stylesHeader.scss'; 
-import './styles/components/stylesNavBar.scss'
-import './styles/components/stylesItemListContainer.scss'
+import './styles/styles.scss';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
