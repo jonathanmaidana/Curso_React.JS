@@ -8,7 +8,7 @@ export default function ItemCount ({ stock, initial }) {
 
 /* ----------------------- Funcion disminuir cantidad ----------------------- */
     const DecreaseCount = () => {
-        if (count > 1) {
+        if (count > initial) {
             setCount( count - 1)
         }
     }
@@ -27,7 +27,7 @@ export default function ItemCount ({ stock, initial }) {
             autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
-            pauseOnHover: true,
+            pauseOnHover: false,
             draggable: true,
             progress: undefined,
             });

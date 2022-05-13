@@ -21,7 +21,7 @@
             padding: 0;
 
             li{
-                font-size: 1.1em;
+                font-size: $h2-font-size;
                 list-style: none;
                 padding: 10px;
                 margin: 0 15px;
@@ -36,6 +36,29 @@
                 span{
                     vertical-align: middle;
                     margin: 5px;
+                }
+            }
+
+            .navBar-nav-dropdown{
+                font-size: $h2-font-size;
+                text-transform: uppercase;
+
+                a{
+                    color: $text-color-light;
+                    background-color: $background-dark;
+                    transition: .3s ease;
+
+                    &:hover{
+                        color: $color-3;
+                    }
+                }
+
+                .dropdown-menu{
+                    padding:0;
+
+                    & a{
+                        padding: 15px 16px;
+                    }
                 }
             }
         }
