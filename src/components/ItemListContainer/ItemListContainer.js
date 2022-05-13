@@ -7,9 +7,9 @@ export default function ItemListContainer ({greeting}) {
     const [listaProductos, setListaProductos] = React.useState([])
 
     const productos = [
-        { id:1, title: 'producto1', precio: 25000, stock: 5, img: 'https://picsum.photos/200' },
-        { id:2, title: 'producto2', precio: 23000, stock: 10, img: 'https://picsum.photos/201' },
-        { id:3, title: 'producto3', precio: 26000, stock: 6, img: 'https://picsum.photos/202' }
+        { id:1, title: 'producto1', precio: 5000, stock: 5, img: '/images/product1.jpg'},
+        { id:2, title: 'producto2', precio: 13000, stock: 10, img: '/images/product2.jpg' },
+        { id:3, title: 'producto3', precio: 3000, stock: 6, img: '/images/product3.jpg' }
     ]
 
     const traerProd = new Promise((resolve, reject) => {
