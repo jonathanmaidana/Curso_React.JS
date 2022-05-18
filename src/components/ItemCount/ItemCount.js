@@ -50,8 +50,10 @@ export default function ItemCount ({ stock, initial }) {
                 <span>{count}</span>
                 <StockButton text="+" handleOnClick={AddCount}/>
             </div>
-            <AddButton handleOnSubmit={onSubmit}>Agregar al carrito</AddButton>
-            <ToastContainer theme="dark" transition={Zoom}/>
+            <div>
+                <AddButton handleOnSubmit={onSubmit}>Agregar al carrito</AddButton>
+                <ToastContainer theme="dark" transition={Zoom}/>
+            </div>     
         </div>
     )
 }

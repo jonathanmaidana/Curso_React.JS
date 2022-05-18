@@ -1,11 +1,11 @@
 import React from 'react'
 import Item from '../Item/Item'
 
-export default function ItemList ({listaProductos}) {
+export default function ItemList ({listaRemeras}) {
     
     return (                
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap'}}>
-            {listaProductos.map((producto) => <Item key={producto.id} producto={producto}/>)}
+            {listaRemeras.map((remeras) => <Item key={remeras.id} remeras={remeras}/>)}
         </div>
     )
 }
