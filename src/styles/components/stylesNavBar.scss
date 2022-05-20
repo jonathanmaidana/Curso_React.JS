@@ -20,11 +20,12 @@
             margin: 0;
             padding: 0;
 
-            li{
+            a{
+                color: $text-color-light;
+                text-decoration: none;
                 font-size: $h2-font-size;
                 list-style: none;
                 padding: 10px;
-                margin: 0 15px;
                 text-transform: uppercase;
                 cursor: pointer;
                 transition: .3s ease;
@@ -40,11 +41,13 @@
             }
 
             .navBar-nav-dropdown{
+                color: $text-color-light;
                 font-size: $h2-font-size;
                 text-transform: uppercase;
 
                 a{
                     color: $text-color-light;
+                    text-decoration: none;
                     background-color: $background-dark;
                     transition: .3s ease;
 

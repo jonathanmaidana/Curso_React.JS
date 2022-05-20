@@ -16,7 +16,7 @@ export default function ItemCount ({ stock, initial }) {
 /* ------------------------ Funcion aumentar cantidad ----------------------- */
     const AddCount = () => {
         if (count < stock){
-            setCount (count + 1)
+            setCount( count + 1)
         }
     }
 
@@ -32,6 +32,7 @@ export default function ItemCount ({ stock, initial }) {
             progress: undefined,
             });
     }
+
 
 /* ----------------------- Componente de presentacion ----------------------- */
     const StockButton = ({handleOnClick, text}) => {
@@ -50,9 +51,10 @@ export default function ItemCount ({ stock, initial }) {
                 <span>{count}</span>
                 <StockButton text="+" handleOnClick={AddCount}/>
             </div>
-            <div>
+            <div style={{ padding: '20px' }}>
                 <AddButton handleOnSubmit={onSubmit}>Agregar al carrito</AddButton>
                 <ToastContainer theme="dark" transition={Zoom}/>
+                <button className="submit-button">Ver más</button>
             </div>     
         </div>
     )

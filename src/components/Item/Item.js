@@ -1,15 +1,18 @@
+import React from 'react';
 import { Card } from 'react-bootstrap'
-import ItemCount from '../ItemCount/ItemCount'
+import ItemCount from '../ItemDetail/ItemCount/ItemCount'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 
 
-export default function Item ({remeras}) {
+export default function Item ({remeras, item}) {    
+    const navigate = useNavigate()
     return(
-        <Card style={{ width: '18rem', margin: '3rem'}}>
-            <Card.Img variant="top" src={remeras.thumbnail}  />
+        <Card style={{ width: '18rem', margin: '3rem'}} onClick={() => navigate(`/product/${item.id}`)}>
+            <Card.Img variant="top" src={remeras.img}/>
             <Card.Body>
                 <Card.Header>{remeras.title}</Card.Header>
                 <Card.Text>
-                <p>Stock: {remeras.available_quantity}</p>
+                <p>Stock: {remeras.stock}</p>
                 <p>Precio: {remeras.price}</p>
                 </Card.Text>
                 <div>
