@@ -1,22 +1,23 @@
 import React from 'react';
 import { Card } from 'react-bootstrap'
 import ItemCount from '../ItemDetail/ItemCount/ItemCount'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
-export default function Item ({remeras, item}) {    
-    const navigate = useNavigate()
+export default function Item ({item}) {    
+const navigate = useNavigate()
     return(
-        <Card style={{ width: '18rem', margin: '3rem'}} onClick={() => navigate(`/product/${item.id}`)}>
-            <Card.Img variant="top" src={remeras.img}/>
+        <Card style={{ width: '18rem', margin: '3rem'}} >
+            <Card.Img variant="top" src={item.img} style={{height: '350px', cursor: 'pointer', padding: '20px'}}/>
             <Card.Body>
-                <Card.Header>{remeras.title}</Card.Header>
+                <h5>{item.title}</h5>
                 <Card.Text>
-                <p>Stock: {remeras.stock}</p>
-                <p>Precio: {remeras.price}</p>
+                <p>Stock: {item.stock}</p>
+                <p>Precio: {item.price}</p>
                 </Card.Text>
                 <div>
                     <ItemCount stock="5" initial="1"/>
+                    <button  onClick={() => navigate(`/item/${item.id}`)}>Ver mas</button>
                 </div>
             </Card.Body>
         </Card>

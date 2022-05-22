@@ -1,13 +1,15 @@
 .itemDetail {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    border: 1px solid #c4c4c4;
     
     &-img{
         margin: 20px;
 
         img{
             max-width: 100%;
-            width: 350px;   
+            width: 200px;   
             padding: 10px;
         }
     }

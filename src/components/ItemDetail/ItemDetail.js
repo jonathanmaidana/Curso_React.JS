@@ -1,8 +1,7 @@
 import React from 'react';
-import ItemCount from './ItemCount/ItemCount'
+import ItemCount from '../ItemDetail/ItemCount/ItemCount'
 
 export default function ItemDetail ({item}) {
-
     return (
         <div className="itemDetail">
             <div className="itemDetail-img">

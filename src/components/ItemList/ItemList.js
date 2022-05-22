@@ -1,11 +1,9 @@
 import React from 'react'
 import Item from '../Item/Item'
 
-export default function ItemList ({listaRemeras}) {
+export default function ItemList ({items}) {
     
     return (                
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap'}}>
-            {listaRemeras.map((remeras) => <Item key={remeras.id} remeras={remeras}/>)}
-        </div>
+        items.map((item, index) => (<Item key={item.id} item={item}/>))
     )
 }

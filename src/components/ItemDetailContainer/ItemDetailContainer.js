@@ -1,24 +1,17 @@
 import React from 'react';
-import { traerProd } from '../../Mocks/Api'
+import { productos } from '../../Mocks/Api'
 import ItemDetail from "../ItemDetail/ItemDetail"
-import {Container, Row, Col} from "react-bootstrap"
 
-export default function ItemDetailContainer (){
+export default function ItemDetailContainer ({itemId}){
     const [item, setItem] = React.useState([])
 
-    const getItem = () => {
-        traerProd.then((response) => {
-            setItem(response)
-        }, []).catch((err) => {console.log(err)})
-    }
+    React.useEffect(() => {
+        setItem(productos.find(item => item.id === +itemId))
+    }, [itemId])
     
     return(
-        <Container>
-            <Row>
-                <Col style={{ width:'18rem', border: '1px solid'}}>
-                    <ItemDetail item={getItem(item)}/>
-                </Col>
-            </Row>
-        </Container>
+        <div style={{width: '80%'}}>
+            <ItemDetail item={item}/>
+        </div>
     )
 }

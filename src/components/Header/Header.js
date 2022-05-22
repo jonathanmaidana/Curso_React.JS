@@ -12,7 +12,7 @@ export default function Header(){
                     <SearchIcon />
                 </div>
             </div>
-            <Link to="/home" style={{ color: 'white', textDecoration: 'none' }}>
+            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
                 <div className="logo">
                     LOGO
                 </div>

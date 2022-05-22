@@ -1,33 +1,31 @@
 import React from "react"
 import {Container, Row, Col} from "react-bootstrap"
 import ItemList from "../ItemList/ItemList"
-import { traerProd } from "../../Mocks/Api"
+import { productos } from "../../Mocks/Api"
 
 export default function ItemListContainer ({categoryId}) {
-    const [listaRemeras, setListaRemeras] = React.useState([])
-    const [items, setItems] = React.useState ([])
+    const [items, setItems] = React.useState([])
 
-    React.useEffect(() => {
-        if(categoryId) {
-            setItems(listaRemeras.filter(item => item.category_id === +categoryId))
+    React.useEffect(() =>{
+        if (categoryId) {
+            setItems(productos.filter(cat => cat.category_id === +categoryId))
         }
-        else{
-            setItems(listaRemeras)
+        else {
+            setItems(productos)
         }
     }, [categoryId])
 
-
-    React.useEffect (()=> {
-        traerProd.then((response) => setListaRemeras(response))
-        .catch((err) => {console.log(err)})
-        //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    // React.useEffect (()=> {
+    //     productos.then((response) => setListaProductos(response))
+    //     .catch((err) => {console.log(err)})
+    //     //eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [])
 
     return (
         <Container>
             <Row>
-                <Col>
-                    <ItemList listaRemeras={items}/>
+                <Col style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+                    <ItemList items={items}/>
                 </Col>
             </Row>
         </Container>
