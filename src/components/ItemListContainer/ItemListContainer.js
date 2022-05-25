@@ -15,12 +15,6 @@ export default function ItemListContainer ({categoryId}) {
         }
     }, [categoryId])
 
-    // React.useEffect (()=> {
-    //     productos.then((response) => setListaProductos(response))
-    //     .catch((err) => {console.log(err)})
-    //     //eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [])
-
     return (
         <Container>
             <Row>

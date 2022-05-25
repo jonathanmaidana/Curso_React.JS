@@ -3,14 +3,10 @@ import { ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
 
-export default function ItemCount ({stock, initial}) {
-    const navigate = useNavigate()
-/* ------------------------ Declaracion de state hook ----------------------- */
-    const [count, setCount] = React.useState(+initial);
-
+export default function ItemCount ({stock, count, setCount}) {
 /* ----------------------- Funcion disminuir cantidad ----------------------- */
     const DecreaseCount = () => {
-        if (count > initial) {
+        if (count > 1) {
             setCount( count - 1)
         }
     }
@@ -47,16 +43,10 @@ export default function ItemCount ({stock, initial}) {
 
 
     return(
-        <div className="stock-container">
-            <div>
-                <StockButton text="-" handleOnClick={DecreaseCount}/>
-                <span>{count}</span>
-                <StockButton text="+" handleOnClick={AddCount}/>
-            </div>
-            <div style={{ padding: '20px' }}>
-                <AddButton handleOnSubmit={onSubmit}>Agregar al carrito</AddButton>
-                <ToastContainer theme="dark" transition={Zoom}/>
-            </div>     
+        <div>
+            <StockButton text="-" handleOnClick={DecreaseCount}/>
+            <span>{count}</span>
+            <StockButton text="+" handleOnClick={AddCount}/>
         </div>
     )
 }
