@@ -1,7 +1,7 @@
-import React from "react"
-import {Container, Row, Col} from "react-bootstrap"
-import ItemList from "../ItemList/ItemList"
-import { productos } from "../../Mocks/Api"
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import ItemList from '../ItemList/ItemList';
+import { productos } from '../../Mocks/Api';
 
 export default function ItemListContainer ({categoryId}) {
     const [items, setItems] = React.useState([])
@@ -14,6 +14,7 @@ export default function ItemListContainer ({categoryId}) {
             setItems(productos)
         }
     }, [categoryId])
+
 
     return (
         <Container>

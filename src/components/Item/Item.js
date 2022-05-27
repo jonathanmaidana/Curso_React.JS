@@ -20,25 +20,25 @@ const onSubmit = () => {
         draggable: true,
         progress: undefined,
         });
-}
+    }
 
     return(
         <Card style={{ width: '18rem', margin: '3rem'}} >
-            <Card.Img variant="top" src={item.img} style={{height: '350px', cursor: 'pointer', padding: '20px'}}/>
+            <Card.Img variant="top" src={item.img} style={{maxWidth: '100%', width: '250px', cursor: 'pointer', padding: '20px'}}/>
+            <hr></hr>
             <Card.Body>
-                <h5>{item.title}</h5>
+                <h5 className="itemDetail-title">{item.title}</h5>
                 <Card.Text>
                 <p>Stock: {item.stock}</p>
-                <p>Precio: {item.price}</p>
+                <p className="itemDetail-price">Precio: {item.price}</p>
                 </Card.Text>
-                <div className="stock-container">
+                <div className="itemDetail-stock">
                     <ItemCount
                     stock={item.stock}
                     count={count} 
-                    setCount={setCount}/>
+                    setCount={setCount}
+                    />
                 <div>
-                    <button className="submit-button" onClick={onSubmit}>Agregar Al Carrito</button>
-                    <ToastContainer theme="dark" transition={Zoom}/>
                     <button className="submit-button" onClick={() => navigate(`/item/${item.id}`)}>Ver mas</button>
                 </div>
                 </div>

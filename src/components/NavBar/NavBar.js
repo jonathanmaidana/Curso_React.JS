@@ -18,7 +18,7 @@ export default function NavBar() {
                                 <NavDropdown.Item href="#action/3.4"><Link to="/category/4">Relojes</Link></NavDropdown.Item>
                             </NavDropdown>
                         <Link to="/contact">Contacto</Link>
-                        <CartIcon/><span>0</span>
+                        <CartIcon/>
                     </ul>
             </Navbar.Collapse>
         </Navbar>

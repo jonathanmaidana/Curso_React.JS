@@ -1,6 +1,6 @@
 import React from 'react';
-import { productos } from '../../Mocks/Api'
-import ItemDetail from "../ItemDetail/ItemDetail"
+import { productos } from '../../Mocks/Api';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 export default function ItemDetailContainer ({itemId}){
     const [item, setItem] = React.useState([])

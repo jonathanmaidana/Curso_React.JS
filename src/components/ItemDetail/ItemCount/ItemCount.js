@@ -1,9 +1,7 @@
 import React from 'react';
-import { ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from 'react-router-dom'
 
-export default function ItemCount ({stock, count, setCount}) {
+export default function ItemCount ({stock, count, setCount, onSubmit}) {
 /* ----------------------- Funcion disminuir cantidad ----------------------- */
     const DecreaseCount = () => {
         if (count > 1) {
@@ -18,35 +16,21 @@ export default function ItemCount ({stock, count, setCount}) {
         }
     }
 
-/* ---------------------- Funcion de agregra al carrito --------------------- */
-    const onSubmit = () => {
-        toast.success(`Agregaste ${count} productos al carrito`, {
-            position: "bottom-center",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            });
-    }
-
-
 /* ----------------------- Componente de presentacion ----------------------- */
     const StockButton = ({handleOnClick, text}) => {
         return <button className="stock-button" onClick={handleOnClick}>{text}</button>
     }
 
-    const AddButton = ({handleOnSubmit}) => {
-        return <button className="submit-button" onClick={handleOnSubmit}>Agregar Al Carrito</button>
+    const AddButton = ({ handleOnSubmit }) => {
+        return <button className="stock-button" onClick={handleOnSubmit}>Agregar al carrito</button>
     }
-
 
     return(
         <div>
             <StockButton text="-" handleOnClick={DecreaseCount}/>
             <span>{count}</span>
             <StockButton text="+" handleOnClick={AddCount}/>
+            <AddButton handleOnSubmit={onSubmit}/>
         </div>
     )
 }

@@ -1,17 +1,19 @@
-import Header from "./components/Header/Header";
-import NavBar from "./components/NavBar/NavBar"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from './views/Home/Home'
-import Product from './views/Product/Product'
-import Contact from './views/Contact/Contact'
-import Cart from './views/Cart/Cart'
-import Category from './views/Category/Category'
+import Header from './components/Header/Header';
+import NavBar from './components/NavBar/NavBar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from "./context/cartContext"
+import Home from './views/Home/Home';
+import Products from "./views/Products/Products";
+import Category from './views/Category/Category';
+import Product from './views/Product/Product';
+import Contact from './views/Contact/Contact';
+import Cart from './views/Cart/Cart';
 
-import Products from "./views/Products/Products"
 
 function App() {
   return (
       <BrowserRouter>
+      <CartProvider>
       <Header/>
       <NavBar/>
         <Routes>
@@ -22,6 +24,7 @@ function App() {
           <Route exact path="/contact" element={ <Contact/> }/>
           <Route exact path="/cart" element={ <Cart/> }/>
         </Routes>
+        </CartProvider>
       </BrowserRouter>
     )
 }
