@@ -1,7 +1,8 @@
 import React from 'react';
-import 'react-toastify/dist/ReactToastify.css';
+import '../ItemCount/ItemCountStyle.scss';
 
-export default function ItemCount ({stock, count, setCount, onSubmit}) {
+
+export default function ItemCount ({stock, count, setCount}) {
 /* ----------------------- Funcion disminuir cantidad ----------------------- */
     const DecreaseCount = () => {
         if (count > 1) {
@@ -21,16 +22,11 @@ export default function ItemCount ({stock, count, setCount, onSubmit}) {
         return <button className="stock-button" onClick={handleOnClick}>{text}</button>
     }
 
-    const AddButton = ({ handleOnSubmit }) => {
-        return <button className="stock-button" onClick={handleOnSubmit}>Agregar al carrito</button>
-    }
-
     return(
         <div>
             <StockButton text="-" handleOnClick={DecreaseCount}/>
             <span>{count}</span>
-            <StockButton text="+" handleOnClick={AddCount}/>
-            <AddButton handleOnSubmit={onSubmit}/>
+            <StockButton text="+" handleOnClick={AddCount}/>    
         </div>
     )
 }

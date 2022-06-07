@@ -5,7 +5,6 @@ const { Provider } = CartContext
 
 const CartProvider = ({children}) => {
     const [cart, setCart] = React.useState([])
-    console.log(cart)
 
     const addItem = (item, count) => {
         if(isInCart(item.id)){  
@@ -22,14 +21,13 @@ const CartProvider = ({children}) => {
         }
     }
 
+    console.log(cart)
 
     const removeItem = (id) => {
-        const newCart = cart.filter((cartItem) => cartItem.id !== id);
-        setCart(newCart)
+        setCart(cart.filter(item => item.id !== id))
     }
 
-
-    const clear = () => {
+    const deleteAll = () => {
         setCart ([])
     }
 
@@ -42,7 +40,7 @@ const CartProvider = ({children}) => {
         <Provider value={{
         addItem,
         removeItem,
-        clear,
+        deleteAll,
         isInCart,
         cart,
         }}>{children}</Provider>

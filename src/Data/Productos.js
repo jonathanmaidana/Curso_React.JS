@@ -1,4 +1,4 @@
-export const productos = [
+const Productos = [
     {
         id: 1, 
         title:'Pantalon Cargo Deportivo', 
@@ -98,10 +98,8 @@ export const productos = [
 ]
 
 
-
-
-// export const traerProd = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve(productos)
-//     }, 3000)
-// })
+export const listaProductos = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(Productos)
+    }, 2000)
+})

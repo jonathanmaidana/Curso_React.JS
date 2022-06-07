@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchIcon from '../NavBar/NavBarWidgets/SearchIcon';
 import { Link } from 'react-router-dom';
+import '../Header/HeaderStyle.scss'
 
 
 export default function Header(){

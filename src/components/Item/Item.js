@@ -1,47 +1,27 @@
 import React from 'react';
 import { Card } from 'react-bootstrap'
-import ItemCount from '../ItemDetail/ItemCount/ItemCount'
 import { useNavigate } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast, Zoom } from 'react-toastify';
+import '../Item/ItemStyle.scss';
 
 
 export default function Item ({item}) {    
 const navigate = useNavigate()
-const [count, setCount] = React.useState(1)
-
-const onSubmit = () => {
-    toast.success(`Agregaste ${count} productos al carrito`, {
-        position: "bottom-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        });
-    }
 
     return(
         <Card style={{ width: '18rem', margin: '3rem'}} >
-            <Card.Img variant="top" src={item.img} style={{maxWidth: '100%', width: '250px', cursor: 'pointer', padding: '20px'}}/>
-            <hr></hr>
+            <Card.Img className="item-img" variant="top" src={item.img} alt={item.title} height="300px" onClick={() => navigate(`/item/${item.id}`)}/>
+            <span className="item-stock-img" style={{backgroundColor: item.stock === 0 ? "red" : "black"}}>{item.stock === 0 ? "Sin stock" : "Hay stock"}</span>
+            <hr style={{margin: '0'}}></hr>
             <Card.Body>
-                <h5 className="itemDetail-title">{item.title}</h5>
-                <Card.Text>
-                <p>Stock: {item.stock}</p>
-                <p className="itemDetail-price">Precio: {item.price}</p>
-                </Card.Text>
-                <div className="itemDetail-stock">
-                    <ItemCount
-                    stock={item.stock}
-                    count={count} 
-                    setCount={setCount}
-                    />
-                <div>
-                    <button className="submit-button" onClick={() => navigate(`/item/${item.id}`)}>Ver mas</button>
+                <h5 className="item-title">{item.title}</h5>
+                <p className="item-price">Precio: ${item.price}</p>
+                <div className="item-counter">
+                    <div className="item-button-container">
+                        <button className="submit-button" onClick={() => navigate(`/item/${item.id}`)}>Ver mas</button>
+                    </div>
                 </div>
-                </div>
+                <p className="item-stock">Cantidad disponible: {item.stock}</p>
             </Card.Body>
         </Card>
     )

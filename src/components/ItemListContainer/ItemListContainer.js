@@ -1,28 +1,36 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 import ItemList from '../ItemList/ItemList';
-import { productos } from '../../Mocks/Api';
+import { listaProductos } from '../../Data/Productos';
+import Loading from '../Loading/Loading'
+import { Container, Row, Col } from 'react-bootstrap'
 
-export default function ItemListContainer ({categoryId}) {
+export default function ItemListContainer ({title, categoryId}) {
     const [items, setItems] = React.useState([])
+    const [loading, setLoading] = React.useState(true)
 
-    React.useEffect(() =>{
-        if (categoryId) {
-            setItems(productos.filter(cat => cat.category_id === +categoryId))
-        }
-        else {
-            setItems(productos)
-        }
+    React.useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+                listaProductos
+                .then((res) => categoryId ? setItems(res.filter(cat => cat.category_id === +categoryId)) : setItems(res))
+                }, 2000)
+        listaProductos
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(true))
     }, [categoryId])
 
-
     return (
+        loading ? (
+        <Loading/>
+        ) : (
         <Container>
-            <Row>
-                <Col style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-                    <ItemList items={items}/>
-                </Col>
-            </Row>
-        </Container>
+                <Row>
+                    <h1 style={{textAlign: 'center', margin:'50px 0'}}>{title}</h1>                    
+                    <Col style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+                        <ItemList items={items}/>
+                    </Col>
+                </Row>
+            </Container>
+        )
     )
 }

@@ -1,12 +1,13 @@
 import React from 'react';
-import { productos } from '../../Mocks/Api';
+import { listaProductos } from '../../Data/Productos';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 export default function ItemDetailContainer ({itemId}){
     const [item, setItem] = React.useState([])
 
     React.useEffect(() => {
-        setItem(productos.find(item => item.id === +itemId))
+        listaProductos
+        .then((res) => setItem(res.find(item => item.id === +itemId)))
     }, [itemId])
     
     return(

@@ -1,7 +1,10 @@
+import CartList from "../../components/Cart/Cart"
+
 export default function Cart () {
+
     return (
         <div>
-            <h1>Cart</h1>
+            <CartList title="Carrito" text="Tu carrito esta vacio"/>
         </div>
     )
 }

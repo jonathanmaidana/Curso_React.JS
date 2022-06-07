@@ -2,6 +2,7 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 import {Container, Row, Col} from 'react-bootstrap';
 import ItemDetailContainer from '../../components/ItemDetailContainer/ItemDetailContainer';
+
 export default function Product () {
   const {itemId} = useParams()
 
@@ -9,7 +10,7 @@ export default function Product () {
     <Container>
         <Row>
             <Col>
-            <h1 style={{textAlign: 'center', margin: '20px 0'}}>Detalles del producto</h1>
+            <h1 style={{textAlign: 'center', margin: '50px 0'}}>Detalles del producto</h1>
             </Col>
         </Row>
       <Row>

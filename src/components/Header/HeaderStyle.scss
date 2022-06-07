@@ -1,7 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Montserrat:wght@500&family=Poppins:wght@600&display=swap');
-@import '_heading.scss';
-@import '_variablesFonts.scss';
+@import '../../styles/styles.scss';
 
 * {
     padding: 0;
@@ -14,9 +13,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items :center;
-    height: 18vw;
+    height: 10vw;
     font-family: 'Lato', sans-serif;
-    background-image: url(../../../public/images/banner-header.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -26,6 +24,7 @@
         cursor: pointer;
         transition: .3s ease;
         text-decoration: none;
+        color: $color-2;
 
         &:hover{
             color: $color-3;

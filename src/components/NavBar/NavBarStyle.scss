@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+@import '../../styles/styles.scss';
+
 .navBar{
     background-color: $background-dark;
     color: $text-color-light;

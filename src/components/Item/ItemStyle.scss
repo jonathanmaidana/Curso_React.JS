@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import '../../styles/styles.scss';
+
+.item-img{
+    padding: 20px;
+    position: relative
+}
+
+.item-stock-img{
+    position: absolute;
+    right: 0;
+    border-radius: 50px;
+    padding: 0.2em 0.4em;
+    margin: 5px;
+    color: white;
+    font-size: $smaller-font-size;
+}
+
+.card-body{
+    text-align: center;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    .item-title{
+        margin: 15px 0;
+        font-size: $h3-font-size;
+        font-weight: bold;
+    }
+
+    .item-price{
+        margin: 40px 0;
+        font-size: $normal-font-size;
+        font-weight: 600;
+    }
+
+    .item-stock{
+        font-size: $small-font-size;
+        margin: 10px 0;
+    }
+
+    .item-counter{ 
+    
+
+        div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items : center;
+            margin: 20px 0;
+    
+            .stock-button{
+                padding: 5px 10px;
+                border: 2px solid #212529;
+                background-color: #fff;
+                border-radius: 5px;
+                font-weight: bold;
+                font: 1.2rem;
+                margin: 0 15px;
+                transition: all .3s ease;
+    
+                &:hover{
+                    background: #212529;
+                    color: #fff
+                }
+            }
+    
+            span{
+                font-weight: 600;
+            }
+        }
+        .submit-button {
+            @extend .css-button-fully-rounded--black
+        }   
+    }
+}

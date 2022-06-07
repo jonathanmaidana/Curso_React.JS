@@ -1,6 +1,7 @@
 import CartIcon from '../NavBar/NavBarWidgets/CartIcon'
 import { Navbar, NavDropdown} from "react-bootstrap"
 import { Link } from 'react-router-dom'
+import '../NavBar/NavBarStyle.scss'
 
 export default function NavBar() {
     return(
@@ -8,7 +9,7 @@ export default function NavBar() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="navBar-nav">
                     <ul>
-                        <Link to="/" className="nav">
+                        <Link to="/">
                             Inicio
                         </Link>
                             <NavDropdown title="Productos" id="basic-nav-dropdown" className="navBar-nav-dropdown nav">
