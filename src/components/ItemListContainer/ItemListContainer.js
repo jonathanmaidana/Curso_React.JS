@@ -1,22 +1,41 @@
 import React from 'react';
 import ItemList from '../ItemList/ItemList';
-import { listaProductos } from '../../Data/Productos';
+// import { listaProductos } from '../../Data/Productos';
 import Loading from '../Loading/Loading'
 import { Container, Row, Col } from 'react-bootstrap'
+/* ---------------------------- importa firestore dentro del proyecto ---------------------------- */
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore' 
 
 export default function ItemListContainer ({title, categoryId}) {
-    const [items, setItems] = React.useState([])
+    const [products, setProducts] = React.useState([])
     const [loading, setLoading] = React.useState(true)
 
+    /* ----------- collection, getDocs, traigo una collecion de items ----------- */
     React.useEffect(() => {
-        setTimeout(() => {
-            setLoading(false)
-                listaProductos
-                .then((res) => categoryId ? setItems(res.filter(cat => cat.category_id === +categoryId)) : setItems(res))
-                }, 2000)
-        listaProductos
-        .catch((error) => console.log(error))
-        .finally(() => setLoading(true))
+        const db = getFirestore();
+        const productosRef = (collection(db, "productos"))
+
+        setTimeout(() =>{
+            if(categoryId) {
+                const q = query(
+                    collection(db, "productos"),
+                    where('categoryId', '==', categoryId)
+                );
+                getDocs(q).then((snapshot) => {
+                    setLoading(true)
+                    snapshot.size === 0 ? console.log('Sin productos') :  setProducts(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })))
+                })
+                .catch((error) => console.log(error))
+                .finally(() => setLoading(false))
+            } else{
+                getDocs(productosRef).then((snapshot) => {
+                    setLoading(true)
+                    snapshot.size === 0 ? console.log('Sin productos') :  setProducts(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })))
+                })
+                .catch((error) => console.log(error))
+                .finally(() => setLoading(false))
+            }
+        }, 1000)
     }, [categoryId])
 
     return (
@@ -27,7 +46,7 @@ export default function ItemListContainer ({title, categoryId}) {
                 <Row>
                     <h1 style={{textAlign: 'center', margin:'50px 0'}}>{title}</h1>                    
                     <Col style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-                        <ItemList items={items}/>
+                        <ItemList items={products}/>
                     </Col>
                 </Row>
             </Container>

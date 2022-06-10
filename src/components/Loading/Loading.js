@@ -6,7 +6,7 @@ import '../Loading/LoadingStyle.scss'
 export default function Loading () {
 
         return(
-            <Container style={{width:'100%', height:'50vh',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <Container style={{width:'100%', height:'70vh',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <Row>
                     <Col style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center',}}>
                         <Spinner animation="border" role="status" className="spinner">

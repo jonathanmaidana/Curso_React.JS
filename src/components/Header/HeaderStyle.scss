@@ -33,21 +33,24 @@
 
     .header-search{
         @extend .search;
+        
 
         .input-search{
             @extend .search-content;
         }
 
-        div{
+        .icon-search{
             font-size: $h2-font-size;
             font-weight: 900;
             background-color: $background-dark;
             display: flex;
             justify-content: center;
             align-items : center;
-            padding: 7px;
+            padding: 10px;
             height: 100%;
             cursor: pointer;
+            border: none;
+            color: $color-7;
         }
     }
 

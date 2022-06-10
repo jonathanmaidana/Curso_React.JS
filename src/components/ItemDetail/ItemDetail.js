@@ -18,11 +18,14 @@ export default function ItemDetail ({item}) {
                 <h3 className="itemDetail-title">{item.title}</h3>
                 <span className="itemDetail-price">Precio: ${item.price}</span>
                 <div className="counter">
-                <ItemCount 
-                    stock={item.stock}
-                    count={count} 
-                    setCount={setCount}
-                    />
+                    {isInCart(item.id) ? "" : (
+                        <ItemCount 
+                        stock={item.stock}
+                        count={count} 
+                        setCount={setCount}
+                        />
+                    )}
+                        
                     <div>
                         {isInCart(item.id) ? (
                         <button className="submit-button" onClick={() => navigate(`/cart`)}>Ir al carrito</button>

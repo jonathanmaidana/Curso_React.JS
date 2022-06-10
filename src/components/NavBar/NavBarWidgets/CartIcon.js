@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from "../../../context/CartContext";
+import '../../NavBar/NavBarStyle.scss'
+/* ------------------------- Import FontAwesomeIcon ------------------------- */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function CartIcon (){
     const { cart } = React.useContext(CartContext);
@@ -11,12 +16,9 @@ export default function CartIcon (){
     })
 
     return (
-        <Link to="/cart">
-            <span className="material-icons">
-                local_mall
-            </span>
+        <Link to="/cart" className="nav-item">
+            <FontAwesomeIcon icon={faShoppingBag} />
             {itemsInCart === 0 ? "" : (<span>{itemsInCart}</span>)} 
         </Link>
-        
         )
     }

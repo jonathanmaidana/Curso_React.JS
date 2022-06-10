@@ -8,7 +8,6 @@
 
 .navBar{
     background-color: $background-dark;
-    color: $text-color-light;
     padding: 0;
     font-family: 'Poppins', sans-serif;
 
@@ -22,12 +21,13 @@
             margin: 0;
             padding: 0;
 
-            a{
+            .nav-item{
                 color: $text-color-light;
                 text-decoration: none;
                 font-size: $h2-font-size;
                 list-style: none;
                 padding: 10px;
+                margin: 0 10px;
                 text-transform: uppercase;
                 cursor: pointer;
                 transition: .3s ease;
@@ -38,7 +38,7 @@
 
                 span{
                     vertical-align: middle;
-                    margin: 5px;
+                    margin: 10px;
                 }
             }
 
@@ -64,6 +64,7 @@
 
                 .dropdown-menu{
                     padding:0;
+                    margin-top: -0.9rem;
 
                     & a{
                         padding: 15px 16px;

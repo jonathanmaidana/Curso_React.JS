@@ -5,13 +5,15 @@ import '../Header/HeaderStyle.scss'
 
 
 export default function Header(){
+
+
     return (
         <header className="header" expand="lg">
             <div className="header-search">
                 <input type="text" className="input-search" name="q" placeholder='Buscar...'/>
-                <div>
-                    <SearchIcon />
-                </div>
+                <button className="icon-search">
+                    <SearchIcon/>
+                </button>
             </div>
             <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
                 <div className="logo">
