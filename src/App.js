@@ -8,7 +8,7 @@ import Category from './views/Category/Category';
 import ProductDetail from './views/ProductDetail/ProductDetail';
 import Contact from './views/Contact/Contact';
 import Cart from './views/Cart/Cart';
-
+import CheckOut from './components/CheckOut/CheckOut';
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
             <Route exact path="/item/:itemId" element={ <ProductDetail/> }/>
             <Route exact path="/contact" element={ <Contact/> }/>
             <Route exact path="/cart" element={ <Cart/> }/>
+            <Route exact path="/checkout" element={ <CheckOut/> }/>
           </Routes>
         </CartProvider>
       </BrowserRouter>

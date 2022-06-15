@@ -9,11 +9,6 @@ export default function Product () {
 
   return(
     <Container>
-        <Row>
-            <Col>
-            <h1 style={{textAlign: 'center', margin: '50px 0'}}>Detalles del producto</h1>
-            </Col>
-        </Row>
       <Row>
         <Col style={{display: 'flex', justifyContent: 'center'}}>
           <ItemDetailContainer itemId={itemId}/>

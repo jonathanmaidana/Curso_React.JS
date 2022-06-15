@@ -1,6 +1,4 @@
 import React from 'react';
-import '../ItemCount/ItemCountStyle.scss';
-
 
 export default function ItemCount ({stock, count, setCount}) {
 /* ----------------------- Funcion disminuir cantidad ----------------------- */
@@ -22,10 +20,11 @@ export default function ItemCount ({stock, count, setCount}) {
         return <button className="stock-button" onClick={handleOnClick}>{text}</button>
     }
 
+
     return(
         <div>
             <StockButton text="-" handleOnClick={DecreaseCount}/>
-            <span>{count}</span>
+            <span className="stock-counter">{count}</span>
             <StockButton text="+" handleOnClick={AddCount}/>    
         </div>
     )

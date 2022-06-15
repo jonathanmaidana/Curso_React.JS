@@ -1,0 +1,95 @@
+[33mcommit 2a58888cfdd4b7b9f426d156d5c98f6549344627[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu Jun 9 23:52:47 2022 -0300
+
+    Desafio 11: Item Collection
+
+[33mcommit 1e9c7e31e7c85e4be6713777be216965441ae0ca[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Tue Jun 7 20:50:51 2022 -0300
+
+    Desafio 11 tecnicas de rendering
+
+[33mcommit 1e98055a6af3728322a28e4b26e4bdf95944888d[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu May 26 23:31:36 2022 -0300
+
+    Desafio 9 : CartContext
+
+[33mcommit 97f2739fe9d4c188cbc15206d82abde5d606464a[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Tue May 24 21:49:56 2022 -0300
+
+    Desafio 8: Eventos
+
+[33mcommit 8dfff4fccd5850299a1747ae23120e4e50189cc6[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Sun May 22 20:53:09 2022 -0300
+
+    Detalles del producto al clickear en ver mas
+
+[33mcommit bf7633991b18c555045e7e0e2150fb804735e393[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu May 19 23:57:22 2022 -0300
+
+    Desafio 8
+
+[33mcommit 7c549ffc01c884c44e1a7f56a6a51957f2bcf2ba[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Tue May 17 22:04:01 2022 -0300
+
+    Desafio 6: Detalle del producto
+
+[33mcommit 63d4d2a6f0ee59bf5ebb5f04dda643d7c4caed69[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu May 12 21:22:45 2022 -0300
+
+    Desafio 5: Promises, asincronia y map
+
+[33mcommit 2226d9ecbf3f704f551b06564731b521cc527a44[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu May 12 21:17:36 2022 -0300
+
+    Desafio 5: Promises, asincronia y map
+
+[33mcommit bf0703586e5ce572281672ec0e650e51562f6208[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu May 12 21:16:25 2022 -0300
+
+    Desafio 5: Promises, asincronia y map
+
+[33mcommit 7465a292aa83b69670f04594e034d27c40e14009[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu May 12 21:14:00 2022 -0300
+
+    Desafio 3: Promises, asincronia y map
+
+[33mcommit 0186bdc81f69c992815772d47cb9c4e4666edf69[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Mon May 9 02:02:42 2022 -0300
+
+    Desafio 4: Contador con Botón
+
+[33mcommit dc2a233501abc6a92fc32f1caadd21a341c190e5[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu May 5 21:28:00 2022 -0300
+
+    Desafío 3
+
+[33mcommit 7363a04062a62fc547a5cc9e9034446e9745f43f[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Wed Apr 27 16:31:07 2022 -0300
+
+    Segundo Desafio
+
+[33mcommit f19aacc52eaf14613df008acb09cac30eff62ec0[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu Apr 21 20:26:05 2022 -0300
+
+    Primer Desafio
+
+[33mcommit e3282327ea3c9a11b7ac9173fc35b14b1aac2a21[m
+Author: Jonathan <jonathanmaidana24@gmail.com>
+Date:   Thu Apr 21 19:35:41 2022 -0300
+
+    Initialize project using Create React App

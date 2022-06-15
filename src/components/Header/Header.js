@@ -1,20 +1,15 @@
 import React from 'react';
-import SearchIcon from '../NavBar/NavBarWidgets/SearchIcon';
 import { Link } from 'react-router-dom';
 import '../Header/HeaderStyle.scss'
+import SearchController from '../../components/SearchController/SearchController'
 
 
 export default function Header(){
 
-
     return (
         <header className="header" expand="lg">
-            <div className="header-search">
-                <input type="text" className="input-search" name="q" placeholder='Buscar...'/>
-                <button className="icon-search">
-                    <SearchIcon/>
-                </button>
-            </div>
+            
+            <SearchController/>
             <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
                 <div className="logo">
                     LOGO

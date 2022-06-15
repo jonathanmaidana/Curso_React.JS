@@ -16,13 +16,12 @@ export default function Slider () {
 
     return (
         <Swiper
-            // install Swiper modules
             modules={[Navigation, Pagination, Thumbs, Autoplay, EffectFade]}
             loop={true}
             spaceBetween={30}
             navigation={false}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 7000}}
+            autoplay={{ delay: 6000}}   
             effect={"fade"}
             >
             <SwiperSlide>

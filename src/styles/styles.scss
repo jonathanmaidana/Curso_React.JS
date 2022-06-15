@@ -1,2 +1,40 @@
 @import './components/variablesFonts';
-@import './components/heading'
+@import './components/heading';
+
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: inherit;
+    font-size: 'PT Sans', sans-serif;
+    line-height: inherit;
+  }
+
+  body{
+    background-color: $background-body;
+  }
+
+  img , picture , video , iframe , figure{
+    max-width: 100%;
+    width: 100%;
+    display: block;
+  }
+  
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Configuramos el texto que seleccionamos */
+  ::selection {
+    background-color: black;
+    color: white;
+  }
+  
+
+  body {
+    min-height  : 100vh;
+    font-size   : 100%;
+  }
+

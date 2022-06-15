@@ -1,12 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Montserrat:wght@500&family=Poppins:wght@600&display=swap');
 @import '../../styles/styles.scss';
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 /* --------------------------------- Header --------------------------------- */
 .header{    
@@ -14,7 +7,6 @@
     justify-content: space-evenly;
     align-items :center;
     height: 10vw;
-    font-family: 'Lato', sans-serif;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -31,43 +23,22 @@
         }
     }
 
-    .header-search{
-        @extend .search;
-        
-
-        .input-search{
-            @extend .search-content;
-        }
-
-        .icon-search{
-            font-size: $h2-font-size;
-            font-weight: 900;
-            background-color: $background-dark;
-            display: flex;
-            justify-content: center;
-            align-items : center;
-            padding: 10px;
-            height: 100%;
-            cursor: pointer;
-            border: none;
-            color: $color-7;
-        }
-    }
-
     &-text{
         background-color: transparent;  
         display: flex;
         flex-direction: row;
         margin: 0;
         padding: 0;
+        align-items: center;
 
         li{
             color: $text-color-bold;
             list-style: none;
-            font-weight: 600;
-            font-size: $h2-font-size;
+            font-size: $small-font-size;
             margin: 0;
+            margin-top: 2px;
             cursor: pointer;
+            text-transform: uppercase;
 
             &:hover{
                 text-decoration: underline;

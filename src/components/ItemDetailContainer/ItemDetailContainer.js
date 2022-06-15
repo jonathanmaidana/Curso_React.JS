@@ -10,19 +10,13 @@ export default function ItemDetailContainer ({itemId}){
         const db = getFirestore();
 
         /* ------------------ doc, getDoc trae un item en singular ------------------ */
-        const productoRef = doc(db, "productos", itemId);
-        getDoc(productoRef).then((snapshot) => {
+        const producto = doc(db, "productos", itemId);
+        getDoc(producto).then((snapshot) => {
             if (snapshot.exists()) {
                 setItem({ id: snapshot.id, ...snapshot.data()})
-                console.log(snapshot.data(  ));   
             }
         }) 
     }, [itemId])
-
-    // React.useEffect(() => {
-    //     listaProductos
-    //     .then((res) => setItem(res.find(item => item.id === +itemId)))
-    // }, [itemId])
     
     return(
         <div style={{width: '80%'}}>

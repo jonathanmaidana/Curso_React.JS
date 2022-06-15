@@ -9,9 +9,11 @@ export default function Loading () {
             <Container style={{width:'100%', height:'70vh',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <Row>
                     <Col style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center',}}>
-                        <Spinner animation="border" role="status" className="spinner">
-                            <span className="visually-hidden">Loading...</span>
-                        </Spinner>
+                        <div class="spinner">
+                        <span class="spinner-inner-1"></span>
+                        <span class="spinner-inner-2"></span>
+                        <span class="spinner-inner-3"></span>
+                        </div>
                     </Col>
                 </Row>
             </Container>

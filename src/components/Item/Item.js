@@ -9,9 +9,10 @@ export default function Item ({item}) {
 const navigate = useNavigate()
 
     return(
-        <Card style={{ width: '18rem', margin: '3rem'}} >
+        <>
+        <Card>   
             <Card.Img className="item-img" variant="top" src={item.img} alt={item.title} height="300px" onClick={() => navigate(`/item/${item.id}`)}/>
-            <span className="item-stock-img" style={{backgroundColor: item.stock === 0 ? "#8d8d8d" : "black"}}>{item.stock === 0 ? "Sin stock" : "Hay stock"}</span>
+            <span className="item-stock-img" style={{backgroundColor: item.stock === 0 ? "rgb(130 0 0)" : "#000"}}>{item.stock === 0 ? "Sin stock" : "Hay stock"}</span>
             <hr style={{margin: '0'}}></hr>
             <Card.Body>
                 <h5 className="item-title">{item.title}</h5>
@@ -24,5 +25,6 @@ const navigate = useNavigate()
                 </div>
             </Card.Body>
         </Card>
+        </>
     )
 }

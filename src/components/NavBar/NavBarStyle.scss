@@ -1,15 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 @import '../../styles/styles.scss';
 
 .navBar{
     background-color: $background-dark;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
+    margin: 10px 0;
+    padding: 0;
 
     .navBar-nav{
         justify-content: center;
@@ -26,8 +21,8 @@
                 text-decoration: none;
                 font-size: $h2-font-size;
                 list-style: none;
-                padding: 10px;
-                margin: 0 10px;
+                padding: 10px 5px;
+                margin: 0 20px;
                 text-transform: uppercase;
                 cursor: pointer;
                 transition: .3s ease;
@@ -37,7 +32,6 @@
                 }
 
                 span{
-                    vertical-align: middle;
                     margin: 10px;
                 }
             }
@@ -51,7 +45,7 @@
                     color: $text-color-light;
                     text-decoration: none;
                     background-color: $background-dark;
-                    transition: .3s ease;
+                    transition: .3s ease;   
 
                     &:hover{
                         color: $color-3;
@@ -64,10 +58,20 @@
 
                 .dropdown-menu{
                     padding:0;
-                    margin-top: -0.9rem;
+                    margin-top: -0.1rem;
+
+                    .dropdown-item{
+                        padding: 0;
+                    }
 
                     & a{
-                        padding: 15px 16px;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px 20px;
+
+                        &:hover{
+                            background-color: $color-6;
+                        }
                     }
                 }
             }
@@ -90,9 +94,8 @@
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 
     &:hover{
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280115, 188, 192, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280115, 188, 192, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
-
 }
 
 /* ------------------------------- mediaquery 768px ------------------------------- */

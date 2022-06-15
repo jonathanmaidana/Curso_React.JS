@@ -7,14 +7,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faAngleLeft} from '@fortawesome/free-solid-svg-icons';
 
 
+
+
 export default function CartList ({title, text}){
-    const { cart, deleteAll, removeItem } = React.useContext(CartContext)
+    const { cart, deleteAll, removeItem, getTotalCart, addQuantity, removeQuantity, count } = React.useContext(CartContext)
     const navigate = useNavigate()
 
-
     return cart.length === 0 ? (
-        <Container>
-            <Row style={{height: '70vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <Container style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
+            <Row>
                 <Col style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
                 <h1 style={{margin:'50px 0'}}>{text}</h1>
                 <button className="cart-search-button" onClick={() => navigate(`/`)}>Buscar Productos</button>
@@ -39,9 +40,9 @@ export default function CartList ({title, text}){
                                 <tr>
                                 <th></th>
                                 <th>Productos</th>
-                                <th>Cantidad</th>
                                 <th>Precio</th>
-                                <th>Total</th>
+                                <th>Cantidad</th>
+                                <th>SubTotal</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,17 +51,29 @@ export default function CartList ({title, text}){
                                 <div style={{display: 'flex', justifyContent: 'space-around'}}>
                                     <img src={item.img} alt={item.title} style={{width: "60px"}}/>
                                 </div>
-                                <td>{item.title}</td>
-                                <td>{item.quantity} u.</td>
+                                <td style={{width: "30%"}}>{item.title}</td>
                                 <td>$ {item.price}</td>
+                                <td>
+                                    <button className="cart-search-button" onClick={() => removeQuantity(item.id)}>-</button>{`${item.quantity}`}
+                                    <button className="cart-search-button" onClick={() => addQuantity(item.id)}>+</button>
+                                </td>
                                 <td>$ {item.price * item.quantity}</td>
                                 <td><button className="cart-search-button" onClick={() => removeItem(item.id)}>X</button></td>
                                 </tr>
                                 ))}
-                            </tbody>    
+                            </tbody> 
+                            <thead>
+                                <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>Total</th>
+                                <th>$ {getTotalCart(count)}</th>
+                                </tr>
+                            </thead> 
                         </Table>
                         <div className="cart-checkout-button-container">
-                            <button className="cart-checkout-button" >Finalizar compra</button>
+                            <button className="cart-checkout-button" onClick={() => navigate(`/checkout`)}>Finalizar compra</button>
                         </div>
                     </Col>
                 </Row>
