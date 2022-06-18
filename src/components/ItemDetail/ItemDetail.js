@@ -11,7 +11,6 @@ import { Button, Modal } from 'react-bootstrap'
 
 
 
-
 export default function ItemDetail ({item}) {
     const [count, setCount] = React.useState(1);
     const navigate = useNavigate();
@@ -47,7 +46,7 @@ export default function ItemDetail ({item}) {
         <>
             <div onClick={handleShow}>
                 <div className="item-detail-cuotas">
-                    <FontAwesomeIcon icon={faCreditCard} className="item-detail-coutas-card-icon"/>
+                    <FontAwesomeIcon icon={faCreditCard} size="1x" style={{marginRight: '5px'}}/>
                     <strong>{cuotas}</strong>
                     <span>cuotas sin interés de</span>
                     <strong>{valorDelItemEnCuotas()}</strong>
@@ -78,7 +77,7 @@ export default function ItemDetail ({item}) {
         );
     }
 
-    return (
+    return item.id !== undefined ? (
         <div className="item-detail">
             <div className="item-detail-img">
                 <img src={item.img} alt={item.title}/>
@@ -90,32 +89,37 @@ export default function ItemDetail ({item}) {
                 </div>
                 <div className="item-detail-payments">
                     <Example/>
-                </div>
-                    <div className="item-detail-counter-quantity">
-                        {isInCart(item.id) || (item.stock <= 0) ? "" : 
-                            (
-                            <>
-                            <span>cantidad</span>
-                            <ItemCount 
-                            stock={item.stock}
-                            count={count} 
-                            setCount={setCount}/></>
-                            )}
-                    </div>
-                    <div className="item-detail-submit">
-                        {isInCart(item.id) ? (
-                        <button className="submit-button" onClick={() => navigate(`/cart`)}>Ir al carrito</button>
-                        ) : (
-                            item.stock <= 0 ? (
-                            <button disabled className="submit-button disabled">Sin stock</button>
-                            ) : (
-                            <button className="submit-button" onClick={() => addItem(item, count) || addCart()}>Agregar al carrito</button>
-                            )
+                </div> 
+                <div className="item-detail-counter-quantity">
+                    {isInCart(item.id) ? "" : 
+                        (
+                        <>
+                        <span>cantidad</span>
+                        <ItemCount 
+                        stock={item.stock}
+                        count={count} 
+                        setCount={setCount}/></>
                         )}
-                        <ToastContainer transition={Zoom} theme="dark"/>
-                        <button className="submit-button" onClick={() => navigate(`/`)}>Volver</button>
+                </div>
+                <div className="item-detail-submit">
+                    {isInCart(item.id) ? (
+                    <div className="item-detail-submit-text"s>
+                    <span>Ya tenes este producto en el carrito.</span><span onClick={() => navigate(`/cart`)} className="item-detail-submit-cart">Ir al carrito</span>
                     </div>
+                    ) : (
+                        item.stock <= 0 ? (
+                        <button disabled className="submit-button disabled">Sin stock</button>
+                        ) : (
+                        <button className="submit-button" onClick={() => addItem(item, count) || addCart()}>Agregar al carrito</button>
+                        )
+                    )}
+                    <ToastContainer transition={Zoom} theme="dark"/>
+                </div>
             </div>
         </div>
-    )  
+    )  : (
+        <div>
+            <h1>Producto no encontrado</h1>
+        </div>
+    )
 }

@@ -19,7 +19,7 @@ export default function Slider () {
             modules={[Navigation, Pagination, Thumbs, Autoplay, EffectFade]}
             loop={true}
             spaceBetween={30}
-            navigation={false}
+            navigation={true}
             pagination={{ clickable: true }}
             autoplay={{ delay: 6000}}   
             effect={"fade"}

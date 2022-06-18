@@ -53,10 +53,6 @@
                 text-transform: uppercase;
                 font-size: 12px;
             }
-    
-            .item-detail-coutas-card-icon{
-                margin-right: 5px;
-            }
         }
     
         .item-detail-payment-methods{
@@ -90,31 +86,9 @@
             margin-bottom: 10px;
         }
 
-        // label{
-        //     text-transform: uppercase;
-        //     font-size: 14px;
-        //     font-weight: 600
-        // }
-
-        // input{
-        //     @extend .search;
-        //     color: #000;
-        //     padding-left: 7px;
-        //     margin-top: 5px;
-        //     width: 70px;
-        //     height: 30px;
-
-        //     &:focus{
-        //         outline: 0;
-        //         border-color: rgba(82, 168, 236, 0.8);
-        //         box-shadow:inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(82 168 236 / 60%);
-        //     }
-        // }
-
         .stock-button{
             padding: 5px 10px;
-            border: 2px solid #212529;
-            background-color: #fff;
+            border: 1px solid #212529;
             border-radius: 5px;
             font-weight: bold;
             font: 1.2rem;
@@ -132,26 +106,43 @@
         }
     } 
 
-    .item-detail-submit{
-        display: flex;
+    .disabled {
+        color: $color-silver;
+        background: none;
+        border-color: $color-silver;
         
-        .submit-button {
-            @extend .css-button-fully-rounded--black;
-            margin: 0;
-            text-transform: uppercase;
-            font-weight: 500;
-            border-radius: 0;
-            background-color: $color-7;
-        }  
-
-        .disabled {
-            color: $color-silver;
+        &:hover{
             background: none;
-            
-            &:hover{
-                background: none;
-                color: $color-silver;
-            }
+            color: $color-silver;
+        }
+    }
+
+    .submit-button {
+        @extend .css-button-fully-rounded--black;
+        margin: 20px 0;
+        text-transform: uppercase;
+        font-weight: 500;
+        width: 100%;
+    }  
+
+
+    .item-detail-submit-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        
+        span{
+            font-size: $h3-font-size;
+            margin-right: 10px;
+        }
+
+        .item-detail-submit-cart{
+            text-decoration: underline;
+            text-transform: uppercase;
+            font-size: $h3-font-size;
+            cursor: pointer;
+            font-weight: 600;
         }
     }
 }

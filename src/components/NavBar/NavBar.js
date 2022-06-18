@@ -1,11 +1,11 @@
-import CartWidger from '../NavBar/CartWidget/CartIcon'
+import CartWidger from '../../components/CartWidget/CartIcon';
 import { Navbar, NavDropdown } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 import '../NavBar/NavBarStyle.scss'
 
 export default function NavBar() {
     return(
-        <Navbar collapseOnSelect expand='sm' className="navBar justify-content-center">
+        <Navbar collapseOnSelect expand='md' className="navBar justify-content-center">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="navBar-nav">
                     <ul>

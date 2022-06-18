@@ -80,6 +80,7 @@ const CartProvider = ({children}) => {
         return cart.reduce((acc, item) => acc + item.price * item.quantity, 0)	
     }
     
+    
     return (
         <Provider value={{
         addItem,

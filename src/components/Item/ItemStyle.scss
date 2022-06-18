@@ -1,13 +1,13 @@
 @import '../../styles/styles.scss';
 
 .card{
-    box-shadow: 1px 1px 10px rgba(0,0,0, 0.2);
     width: 18rem;
     margin: 1.5rem;
 }
 
 .item-img{
-    position: relative
+    position: relative;
+    cursor: pointer;
 }
 
 .item-stock-img{
@@ -22,6 +22,9 @@
 }
 
 .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     padding: 15px;
     text-transform: uppercase;
@@ -30,52 +33,35 @@
     .item-title{
         margin: 15px 0;
         font-size: $h3-font-size;
-        font-weight: bold;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: break-spaces;
     }
 
     .item-price{
-        margin: 20px 0;
-        font-size: $normal-font-size;
+        font-size: $h3-font-size;
         font-weight: 600;
+        text-align: start;
+        margin-left: 15px;
+        margin-bottom: 0;
+        
     }
 
-    .item-stock{
-        font-size: $small-font-size;
-        margin: 10px 0;
-    }
-
-    .item-counter{ 
-        div{
+    .item-button{ 
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
             align-items : center;
-            margin: 20px 0;
-    
-            .stock-button{
-                padding: 5px 10px;
-                border: 2px solid $color-2;
-                background-color: $color-7;
-                border-radius: 5px;
-                font-weight: bold;
-                font-size: $h3-font-size;
-                margin: 0 15px;
-                transition: all .3s ease;
-    
-                &:hover{
-                    opacity: 85%
-                }
-            }
-    
-            span{
-                font-weight: 600;
-            }
-        }
+            margin: 15px 0;
+
         .submit-button {
             @extend .css-button-fully-rounded--black;
             width: 100%;
-            box-shadow:  1px 3px 10px rgb(0 0 0 / 20%);
+            height: 30px;
             background-color: $color-7;
+            border: 1px solid;
+            text-transform: uppercase;
+            font-size: $smaller-font-size;
         }   
     }
 }

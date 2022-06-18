@@ -1,13 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { getDocs, collection, getFirestore } from 'firebase/firestore';
+import { getDocs, collection, getFirestore, query } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom'
 import './SearchController.scss'
 
 export default function Search() {
     const [items, setItems] = React.useState([])
     const navigate = useNavigate()
+    
 
     React.useEffect(() => {
         const db = getFirestore();

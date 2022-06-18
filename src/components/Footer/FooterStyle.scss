@@ -1,0 +1,9 @@
+@import '../../styles/styles.scss';
+
+footer{
+    background-color: $background-dark;
+    padding: 20px;
+    text-align: center;
+    font-size: $smaller-font-size;
+    margin-top: 20vh;
+}

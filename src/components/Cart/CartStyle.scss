@@ -14,13 +14,36 @@ tbody{
     td{
         text-align: center;
         vertical-align: middle;
-        font-weight: 700;
+    }
+}
+
+.cart-item{
+    display: flex;
+    justify-content: space-around;
+
+    img{
+        cursor: pointer;
+    }
+
+    &-title{
+        cursor: pointer;
+        width: 30%;
     }
 }
 
 .cart-search-button{
-        @extend .css-button-fully-rounded--black;
+    @extend .css-button-fully-rounded--black;
+    margin: 20px 0;
+    text-transform: uppercase;
 }
+
+.delete-item{
+    border-radius: 50%;
+    padding: 5px 11px;
+    font-size: 0.8em;
+}
+
+
 
 .cart-delete-button-container{
     display: flex;
@@ -28,7 +51,7 @@ tbody{
 
     .cart-button{
         @extend .css-button-fully-rounded--black;
-}
+    }
 }
 
 .cart-checkout-button-container{
@@ -37,6 +60,11 @@ tbody{
 
     .cart-checkout-button{
         @extend .css-button-fully-rounded--black;
-        padding: 20px 10px;
+        padding: 10px;
     }
+}
+
+.cart-item-qnty-button{
+    @extend .css-button-fully-rounded--black;
+    border: none;
 }

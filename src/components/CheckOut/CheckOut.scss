@@ -1,40 +1,152 @@
+@import "../../styles/styles.scss";
+
 h1{
     text-align: center;
     margin: 50px 0;
 }
 
-.form{
+.checkout-page-container{
+    margin: 50px 100px;
+}
+
+.checkout{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: flex-start;
 
-    .form-container{
+    &-form{
         display: flex;
-        flex-direction: column;
-        width: 30%;
-
-        label{
-            font-size: 20px;
-        }
-        
-        input{
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 5px;
-            margin: 5px 0;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        margin: 0 10px;
+    
+        &-container{
+            display: flex;
+            flex-direction: column;
             width: 100%;
-        }
+            padding: 20px;
+            background-color: #fff;
+            
+            input{
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 5px;
+                margin: 5px 0;
+                width: 100%;
 
-        button{
-            background-color: #00bcd4;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 5px 0;
-            width: 100%;
-            cursor: pointer;
+                &:focus{
+                    outline: 1px solid rgb(153, 153, 153);
+                }
+            }
+    
+            &-submit{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 15px;
+
+                button{
+                    background-color: #72c8c1;
+                    border: 1px solid rgb(134, 134, 134) !important;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px;
+                    width: 50%;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;;
+    
+                    &:hover{
+                        background-color: #4fa099;
+                    }
+                }
+            }      
+        }
+    }
+
+    &-items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: #fff;
+
+        &-container{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: content;
+            margin: 0 50px;
+            width: 500px;
+
+            .checkout-items-container-item{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;     
+                width: 100%;
+
+                p{
+                    text-align: center;
+                }
+                
+    
+                &-title {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width: 40%;
+                    text-align: start;
+                }
+            }
+
+            &-total{
+                display: flex;
+                justify-content: flex-end;
+                font-weight: 600;
+                font-size: 1.2em;
+                margin: 20px;
+            }
         }
     }
 }
 
+.purchase-completed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    .purchase-completed-container{
+        margin-top: 100px;   
+        text-align: center;
+        width: 50%;
+        padding: 0 100px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+
+        &-data{
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        &-icon{
+            color: rgb(60, 213, 60);
+            font-size: 2em;
+            border: 3px solid rgb(60,213,60);
+            border-radius: 50%;
+            padding: 0.5em;
+            margin: 1em;
+        }
+    }
+
+    button{
+        @extend .css-button-fully-rounded--black;
+        margin: 30px 0;
+        text-transform: uppercase;
+    }
+}

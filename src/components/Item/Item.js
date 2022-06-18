@@ -12,16 +12,12 @@ const navigate = useNavigate()
         <>
         <Card>   
             <Card.Img className="item-img" variant="top" src={item.img} alt={item.title} height="300px" onClick={() => navigate(`/item/${item.id}`)}/>
-            <span className="item-stock-img" style={{backgroundColor: item.stock === 0 ? "rgb(130 0 0)" : "#000"}}>{item.stock === 0 ? "Sin stock" : "Hay stock"}</span>
-            <hr style={{margin: '0'}}></hr>
+            <span className="item-stock-img" style={{backgroundColor: item.stock <= 0 ? "rgb(219 0 0)" : "#000"}}>{item.stock <= 0 ? "Sin stock" : "Hay stock"}</span>
             <Card.Body>
                 <h5 className="item-title">{item.title}</h5>
-                <p className="item-price">Precio: ${item.price}</p>
-                <div className="item-counter">
-                <p className="item-stock">Cantidad disponible: {item.stock}</p>
-                    <div className="item-button-container">
-                        <button className="submit-button" onClick={() => navigate(`/item/${item.id}`)}>Ver mas</button>
-                    </div>
+                <p className="item-price">${item.price}</p>
+                <div className="item-button">
+                    <button className="submit-button" onClick={() => navigate(`/item/${item.id}`)}>ver mas</button>
                 </div>
             </Card.Body>
         </Card>

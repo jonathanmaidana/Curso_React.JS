@@ -5,8 +5,6 @@ export default function Category () {
     const {categoryId} = useParams();
 
     return (
-        <div>        
-            <ItemListContainer categoryId={categoryId} title="Lista de Productos"/>
-        </div>
+        <ItemListContainer categoryId={categoryId} title="Lista de Productos"/>
     )
 }

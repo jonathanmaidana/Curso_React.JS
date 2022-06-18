@@ -19,7 +19,7 @@
             .nav-item{
                 color: $text-color-light;
                 text-decoration: none;
-                font-size: $h2-font-size;
+                font-size: $h3-font-size;
                 list-style: none;
                 padding: 10px 5px;
                 margin: 0 20px;
@@ -38,7 +38,7 @@
 
             .navBar-nav-dropdown{
                 color: $text-color-light;
-                font-size: $h2-font-size;
+                font-size: $h3-font-size;
                 text-transform: uppercase;
 
                 a{
@@ -46,6 +46,7 @@
                     text-decoration: none;
                     background-color: $background-dark;
                     transition: .3s ease;   
+                    font-size: $h3-font-size;
 
                     &:hover{
                         color: $color-3;

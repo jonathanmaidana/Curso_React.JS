@@ -9,6 +9,8 @@ import ProductDetail from './views/ProductDetail/ProductDetail';
 import Contact from './views/Contact/Contact';
 import Cart from './views/Cart/Cart';
 import CheckOut from './components/CheckOut/CheckOut';
+import Footer from './components/Footer/Footer';
+import Error404 from './views/Error404/Error404';
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
             <Route exact path="/contact" element={ <Contact/> }/>
             <Route exact path="/cart" element={ <Cart/> }/>
             <Route exact path="/checkout" element={ <CheckOut/> }/>
+            <Route path="*" element={ <Error404/> }/>
           </Routes>
+          <Footer/>
         </CartProvider>
       </BrowserRouter>
     )

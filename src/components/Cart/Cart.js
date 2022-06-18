@@ -4,7 +4,7 @@ import { CartContext } from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom'
 import '../Cart/CartStyle.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faAngleLeft} from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faAngleLeft, faShoppingBag} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -17,6 +17,7 @@ export default function CartList ({title, text}){
         <Container style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
             <Row>
                 <Col style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+                <FontAwesomeIcon icon={faShoppingBag} size="5x"/>
                 <h1 style={{margin:'50px 0'}}>{text}</h1>
                 <button className="cart-search-button" onClick={() => navigate(`/`)}>Buscar Productos</button>
                 </Col>
@@ -32,8 +33,8 @@ export default function CartList ({title, text}){
                 <Row>
                     <Col>
                         <div className="cart-delete-button-container">
-                            <button className="cart-button" onClick={() => navigate(`/`)}><FontAwesomeIcon icon={faAngleLeft} style={{marginRight: '5px'}}/>Seguir comprando</button>
-                            <button className="cart-button" onClick={() => deleteAll()}><FontAwesomeIcon icon={faTrash} style={{marginRight: '5px'}}/>Vaciar carrito</button>
+                            <button className="cart-button" onClick={() => navigate(`/`)}><FontAwesomeIcon icon={faAngleLeft} size="1x" style={{marginRight: '5px'}}/>Seguir comprando</button>
+                            <button className="cart-button" onClick={() => deleteAll()}><FontAwesomeIcon icon={faTrash} ize="1x" style={{marginRight: '5px'}}/>Vaciar carrito</button>
                         </div>
                         <Table style={{margin:'50px 0'}}>
                             <thead>
@@ -48,17 +49,17 @@ export default function CartList ({title, text}){
                             <tbody>
                                 {cart.map((item) => (
                                 <tr>
-                                <div style={{display: 'flex', justifyContent: 'space-around'}}>
-                                    <img src={item.img} alt={item.title} style={{width: "60px"}}/>
+                                <div className='cart-item'>
+                                    <img src={item.img} alt={item.title} style={{width: "60px"}} onClick={() => navigate(`/item/${item.id}`)}/>
                                 </div>
-                                <td style={{width: "30%"}}>{item.title}</td>
+                                <td className='cart-item-title' onClick={() => navigate(`/item/${item.id}`)}>{item.title}</td>
                                 <td>$ {item.price}</td>
                                 <td>
-                                    <button className="cart-search-button" onClick={() => removeQuantity(item.id)}>-</button>{`${item.quantity}`}
-                                    <button className="cart-search-button" onClick={() => addQuantity(item.id)}>+</button>
+                                    <button className="cart-item-qnty-button" onClick={() => removeQuantity(item.id)}>-</button>{`${item.quantity}`}
+                                    <button className="cart-item-qnty-button" onClick={() => addQuantity(item.id)}>+</button>
                                 </td>
                                 <td>$ {item.price * item.quantity}</td>
-                                <td><button className="cart-search-button" onClick={() => removeItem(item.id)}>X</button></td>
+                                <td><button className="cart-search-button delete-item" onClick={() => removeItem(item.id)}>X</button></td>
                                 </tr>
                                 ))}
                             </tbody> 
@@ -67,7 +68,7 @@ export default function CartList ({title, text}){
                                 <th></th>
                                 <th></th>
                                 <th></th>
-                                <th>Total</th>
+                                <th style={{fontTransform: 'uppercase'}}>Total</th>
                                 <th>$ {getTotalCart(count)}</th>
                                 </tr>
                             </thead> 

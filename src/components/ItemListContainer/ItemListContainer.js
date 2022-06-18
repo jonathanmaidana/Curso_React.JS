@@ -18,16 +18,16 @@ export default function ItemListContainer ({title, categoryId }) {
         setLoading(true);
         setTimeout(() =>{
             if(categoryId) {
-            const q = query(
-                collection(db, "productos"),
-                where('categoryId', '==', categoryId)
-            );
-            getDocs(q).then((snapshot) => {
-                setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data()})))
-                setLoading(false)
-            })
-            .catch(error => console.log(error))                
-            } 
+                const q = query(
+                    collection(db, "productos"),
+                    where('categoryId', '==', categoryId)
+                );
+                getDocs(q).then((snapshot) => {
+                    setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data()})))
+                    setLoading(false);
+                })
+                .catch(error => console.log(error))                
+            }
             else{
                 getDocs(productosRef).then((snapshot) => {
                     snapshot.size === 0 ? console.log('Sin productos') :  setProducts(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })))
@@ -41,7 +41,7 @@ export default function ItemListContainer ({title, categoryId }) {
 
     return (
         loading ? (
-        <Loading/>
+        <Loading />
         ) : (
         <Container>
             <Row>
