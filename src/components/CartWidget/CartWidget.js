@@ -7,18 +7,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 
+
+
 export default function CartIcon (){
-    const { cart,  } = React.useContext(CartContext);
-    let itemsInCart = 0;
+    const { cart } = React.useContext(CartContext);
 
-    cart.forEach(item => {
-        itemsInCart += item.quantity;
-    });
+    let qntyInCart = 0;
 
+    // eslint-disable-next-line
+    cart.map((item) => {
+        qntyInCart += item.quantity
+    })
+    
+
+    
     return (
         <Link to="/cart" className="nav-item">
             <FontAwesomeIcon icon={faShoppingBag} size="1x"/>
-            {itemsInCart === 0 ? "" : (<span>{itemsInCart}</span>)} 
+            {qntyInCart === 0 ? "" : (<span>{qntyInCart}</span>)} 
         </Link>
         )
     }

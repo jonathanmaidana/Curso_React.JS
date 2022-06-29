@@ -1,3 +1,5 @@
+import '../Error404/Error404Style.scss'
+
 export default function Error404 () {
 
     return(

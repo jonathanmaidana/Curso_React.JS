@@ -6,7 +6,6 @@ import Home from './views/Home/Home';
 import Products from "./views/Products/Products";
 import Category from './views/Category/Category';
 import ProductDetail from './views/ProductDetail/ProductDetail';
-import Contact from './views/Contact/Contact';
 import Cart from './views/Cart/Cart';
 import CheckOut from './components/CheckOut/CheckOut';
 import Footer from './components/Footer/Footer';
@@ -22,8 +21,8 @@ function App() {
             <Route exact path="/" element={ <Home/> }/>
             <Route exact path="/products" element={ <Products/> }/>
             <Route exact path="/category/:categoryId" element={ <Category/> }/>
+            <Route path="/category/:categoryId" element={ <Error404/> }/>
             <Route exact path="/item/:itemId" element={ <ProductDetail/> }/>
-            <Route exact path="/contact" element={ <Contact/> }/>
             <Route exact path="/cart" element={ <Cart/> }/>
             <Route exact path="/checkout" element={ <CheckOut/> }/>
             <Route path="*" element={ <Error404/> }/>

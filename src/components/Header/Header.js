@@ -8,24 +8,12 @@ export default function Header(){
 
     return (
         <header className="header" expand="lg">
-            
-            <SearchController/>
-            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
-                <div className="logo">
+            <Link to="/" className="logo">
+                <div>
                     LOGO
                 </div>
             </Link>
-            <div> 
-                <ul className="header-text">
-                    <li>
-                        Registrarme
-                    </li>
-                    <span className="text-primary"></span>
-                    <li>
-                        Iniciar Sesión
-                    </li>
-                </ul>
-            </div>
+            <SearchController/>
         </header>
     );
 }

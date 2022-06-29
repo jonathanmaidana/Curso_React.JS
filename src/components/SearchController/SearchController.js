@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import { getDocs, collection, getFirestore, query } from 'firebase/firestore';
+import { getDocs, collection, getFirestore } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom'
 import './SearchController.scss'
 
@@ -27,9 +27,7 @@ export default function Search() {
 
     const onSearch = (searchValue) => {
         setValue(searchValue);
-        console.log('search', searchValue)
     }
-
 
     return(
         <div>
@@ -53,7 +51,7 @@ export default function Search() {
                         <span className="item-search-title">{item.title}</span>
                         <span className="item-search-price">${item.price}</span>
                     </div>
-                    <div  style={{position:'absolute', right: 15, top: 20, fontSize:'0.8em'}}>
+                    <div>
                         <FontAwesomeIcon icon={faAngleRight} />
                     </div>
                 </div>
@@ -63,18 +61,3 @@ export default function Search() {
         </div>
     )
 }
-
-// <div className="dropdown-search">
-//                 {items.filter(item => item.title.toLowerCase().includes(value.toLowerCase())).map(item => (
-//                     <div onClick={() => navigate(`/item/${item.id}`)} className="dropdown-row" key={item.title}>
-//                     <img src={item.img} style={{width:'50px'}}/>
-//                     <div className="item-search">
-//                         <span className="item-search-title">{item.title}</span>
-//                         <span className="item-search-price">${item.price}</span>
-//                     </div>
-//                     <div  style={{position:'absolute', right: 15, top: 20, fontSize:'0.8em'}}>
-//                         <FontAwesomeIcon icon={faAngleRight} />
-//                     </div>
-//                 </div>
-//                     ))}
-//             </div>

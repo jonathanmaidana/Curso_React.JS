@@ -44,7 +44,6 @@
         text-align: start;
         margin-left: 15px;
         margin-bottom: 0;
-        
     }
 
     .item-button{ 
@@ -63,5 +62,24 @@
             text-transform: uppercase;
             font-size: $smaller-font-size;
         }   
+    }
+}
+
+/* ------------------------------- mediaquerys max-width 768px ------------------------------ */
+@media only screen and (max-width: 768px) {
+    .item-img{
+        padding: 50px;
+    } 
+
+    .card-body{
+        .item-title{
+            font-size: $small-font-size;
+        }
+
+        .item-price{
+            font-size: $small-font-size;
+            text-align: center;
+            margin: 0;
+        }
     }
 }

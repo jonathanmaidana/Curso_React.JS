@@ -79,7 +79,30 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: #000000;
+        background: $background-dark;
         opacity: 0.4;
+    }
+}
+
+/* ------------------------------- mediaquerys max-width 768px ------------------------------ */
+@media only screen and (max-width: 768px){
+    .dropdown-search{
+        width: 300px;
+        left: 30px;
+        top: 180px;
+
+        .dropdown-row{
+            width: 300px;
+        }
+
+        .item-search-title{
+            font-size: $smaller-font-size;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .fa-angle-right{
+            font-size: $smaller-font-size;
+        }
     }
 }

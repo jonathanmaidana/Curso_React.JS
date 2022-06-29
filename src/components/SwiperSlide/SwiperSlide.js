@@ -23,6 +23,7 @@ export default function Slider () {
             pagination={{ clickable: true }}
             autoplay={{ delay: 6000}}   
             effect={"fade"}
+            style={{width: '1000px', maxWidth: '100%'}}
             >
             <SwiperSlide>
                 <div style={{display: "flex", justifyContent: "center"}}>

@@ -22,47 +22,18 @@
             color: $color-3;
         }
     }
-
-    &-text{
-        background-color: transparent;  
-        display: flex;
-        flex-direction: row;
-        margin: 0;
-        padding: 0;
-        align-items: center;
-
-        li{
-            color: $text-color-bold;
-            list-style: none;
-            font-size: $small-font-size;
-            margin: 0;
-            margin-top: 2px;
-            cursor: pointer;
-            text-transform: uppercase;
-
-            &:hover{
-                text-decoration: underline;
-            }
-        }
-
-        .text-primary::after{
-            content: '|';
-            padding: 0px 10px;
-            display: inline-block;
-            color: $text-color-bold;
-        }
-    }
 }
 
-/* ------------------------------- mediaquery ------------------------------- */
+/* ------------------------------- Mediaquery max-width 768px ------------------------------- */
 @media only screen and (max-width: 768px){
     .header{
         height: 100%;
         padding:20px;
-        flex-direction: column-reverse;
+        flex-direction: column;
 
         .header-search{ 
             height: 2.5rem;
+            margin: 20px 0;
         }
     }
 }

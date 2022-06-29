@@ -13,6 +13,7 @@ export default function CartList ({title, text}){
     const { cart, deleteAll, removeItem, getTotalCart, addQuantity, removeQuantity, count } = React.useContext(CartContext)
     const navigate = useNavigate()
 
+
     return cart.length === 0 ? (
         <Container style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '70vh'}}>
             <Row>
@@ -34,9 +35,9 @@ export default function CartList ({title, text}){
                     <Col>
                         <div className="cart-delete-button-container">
                             <button className="cart-button" onClick={() => navigate(`/`)}><FontAwesomeIcon icon={faAngleLeft} size="1x" style={{marginRight: '5px'}}/>Seguir comprando</button>
-                            <button className="cart-button" onClick={() => deleteAll()}><FontAwesomeIcon icon={faTrash} ize="1x" style={{marginRight: '5px'}}/>Vaciar carrito</button>
+                            <button className="cart-button" onClick={() => deleteAll()}><FontAwesomeIcon icon={faTrash} size="1x" style={{marginRight: '5px'}}/>Vaciar carrito</button>
                         </div>
-                        <Table style={{margin:'50px 0'}}>
+                        <Table style={{margin:'50px 0'}} responsive="xl">
                             <thead>
                                 <tr>
                                 <th></th>
@@ -72,11 +73,11 @@ export default function CartList ({title, text}){
                                 <th>$ {getTotalCart(count)}</th>
                                 </tr>
                             </thead> 
-                        </Table>
-                        <div className="cart-checkout-button-container">
-                            <button className="cart-checkout-button" onClick={() => navigate(`/checkout`)}>Finalizar compra</button>
-                        </div>
+                        </Table>    
                     </Col>
+                    <div className="cart-checkout-button-container">
+                        <button className="cart-checkout-button" onClick={() => navigate(`/checkout`)}>Finalizar compra</button>
+                    </div>
                 </Row>
             </Container>
         )

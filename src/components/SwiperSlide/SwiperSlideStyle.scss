@@ -1,5 +1,6 @@
+@import '../../styles/styles.scss';
+
 .swiper {
-    position: absolute;
 
     .swiper-pagination{
         position: relative;
@@ -8,7 +9,7 @@
         margin: 12px 0;
         
         .swiper-pagination-bullet {
-            background: #000000;
+            background: $background-dark;
         }
     }
 
@@ -17,19 +18,17 @@
         overflow: hidden;
 
         img{
-            width: 1000px;
             height: 500px;
         }
     }
 
     .swiper-button-prev{
-        left: 180px;
-        color: #ffffff80;
+        color: $color-silver-light;
         top: 45%;
 
         &::after{
-            font-size: 15px;
-            background-color: #1b1b1bcf;
+            font-size: $h3-font-size;
+            background-color: $color-5;
             border-radius: 50%;
             padding: 5px 10px;
             font-weight: 600;
@@ -37,16 +36,25 @@
     }
 
     .swiper-button-next{
-        right: 180px;
-        color: #ffffff80;
+        color: $color-silver-light;
         top: 45%;
 
         &::after{
-            font-size: 15px;
-            background-color: #1b1b1bcf;
+            font-size: $h3-font-size;
+            background-color: $color-5;
             border-radius: 50%;
             padding: 5px 10px;
             font-weight: 600;
+        }
+    }
+}
+
+/* ------------------------ Mediaquery max-width 768 ------------------------ */
+@media only screen and (max-width: 768px){
+
+    .swiper-slide{
+        img{
+            height: 300px !important;
         }
     }
 }

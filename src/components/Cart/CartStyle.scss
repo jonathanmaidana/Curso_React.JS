@@ -23,6 +23,7 @@ tbody{
 
     img{
         cursor: pointer;
+        height: 75px;
     }
 
     &-title{
@@ -44,14 +45,20 @@ tbody{
 }
 
 
-
 .cart-delete-button-container{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     .cart-button{
         @extend .css-button-fully-rounded--black;
     }
+}
+
+.cart-item-qnty-button{
+    @extend .css-button-fully-rounded--black;
+    border: 1px solid;
+    padding: 1px 7px;
 }
 
 .cart-checkout-button-container{
@@ -62,9 +69,4 @@ tbody{
         @extend .css-button-fully-rounded--black;
         padding: 10px;
     }
-}
-
-.cart-item-qnty-button{
-    @extend .css-button-fully-rounded--black;
-    border: none;
 }

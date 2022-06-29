@@ -1,4 +1,4 @@
-import CartWidger from '../../components/CartWidget/CartIcon';
+import CartWidget from '../../components/CartWidget/CartWidget';
 import { Navbar, NavDropdown } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 import '../NavBar/NavBarStyle.scss'
@@ -20,8 +20,7 @@ export default function NavBar() {
                                     <Link to="/category/relojes">Relojes</Link>
                                 </NavDropdown.Item>
                             </NavDropdown>
-                        <Link to="/contact" className="nav-item">Contacto</Link>
-                        <CartWidger/>
+                        <CartWidget/>
                     </ul>
             </Navbar.Collapse>
         </Navbar>

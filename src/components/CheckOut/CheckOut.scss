@@ -11,122 +11,146 @@ h1{
 
 .checkout{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
 
     &-form{
         display: flex;
         justify-content: center;
-        align-items: center;
-        width: 50%;
-        margin: 0 10px;
-    
-        &-container{
+        align-items: flex-start;
+        width: 80%;
+
+        &-container-data{
+            display: flex; 
+            flex-direction: row;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        & form{
             display: flex;
             flex-direction: column;
-            width: 100%;
             padding: 20px;
-            background-color: #fff;
-            
+            background-color: $color-7;
+
+            label{
+                font-weight: 600;
+            }
+
             input{
-                border: 1px solid #ccc;
+                border: 2px solid $color-silver-light;
                 border-radius: 5px;
                 padding: 5px;
                 margin: 5px 0;
-                width: 100%;
+                transition: all 0.2s ease-in-out;
 
                 &:focus{
-                    outline: 1px solid rgb(153, 153, 153);
+                    outline: none;
+                    border: 2px solid rgb(159, 159, 159);
                 }
             }
-    
-            &-submit{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 15px;
-
-                button{
-                    background-color: #72c8c1;
-                    border: 1px solid rgb(134, 134, 134) !important;
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
-                    padding: 10px;
-                    width: 50%;
-                    cursor: pointer;
-                    transition: all 0.3s ease-in-out;;
-    
-                    &:hover{
-                        background-color: #4fa099;
-                    }
-                }
-            }      
         }
+
+        &-container-submit{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+
+            .submit-button{
+                @extend .css-button-fully-rounded--black;   
+                padding: 10px;
+                width: 50%;
+                background-color: $color-7;
+
+                &:focus{
+                    background-color: none;
+                    border-color: none;
+                    box-shadow: none;
+                }
+            }
+        }      
     }
 
+    /* ------------------ Items agregados al carrito de compras ----------------- */
     &-items{
         display: flex;
         justify-content: center;
-        align-items: center;
         border-radius: 10px;
-        background-color: #fff;
+        background-color: $color-7;
+        margin: 0 10px;
+        width: 40%;
 
         &-container{
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            align-items: center;
-            justify-content: content;
-            margin: 0 50px;
-            width: 500px;
+            padding: 0 20px;
+            background-color: rgb(255, 255, 255);
+            width: 100%;
 
-            .checkout-items-container-item{
+            &-title{
+                width: 100%;
+                text-align: center;
+                font-size: 2em;
+                margin: 10px 0;
+                font-weight: 600;
+            }
+
+            &-item{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
                 padding: 10px;     
                 width: 100%;
-
-                p{
-                    text-align: center;
-                }
-                
     
                 &-title {
                     text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: nowrap;
                     width: 40%;
-                    text-align: start;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+
+                    span{
+                        color: $color-silver-light;
+                    }
                 }
             }
 
             &-total{
-                display: flex;
-                justify-content: flex-end;
                 font-weight: 600;
-                font-size: 1.2em;
-                margin: 20px;
+                font-size: $h2-font-size;
+                margin: 20px 0;
+                width: 100%;
+                text-transform: uppercase;
+
+                span{
+                    display: flex;
+                    justify-content: space-between;
+                }
             }
         }
     }
 }
 
+/* ------------------ FeedBack con los datos del comprador ------------------ */
 .purchase-completed{
     display: flex;
     flex-direction: column;
     align-items: center;
 
     
-    .purchase-completed-container{
+    &-container{
         margin-top: 100px;   
         text-align: center;
-        width: 50%;
         padding: 0 100px;
-        background-color: #fff;
+        background-color: $color-7;
         border: 1px solid rgba(0, 0, 0, 0.12);
 
         &-data{
@@ -148,5 +172,42 @@ h1{
         @extend .css-button-fully-rounded--black;
         margin: 30px 0;
         text-transform: uppercase;
+    }
+}
+
+/* ------------------------------- Mediaquery max-width 768px ------------------------------- */
+@media only screen and (max-width: 1490px){
+
+    .checkout-page-container{
+        margin: 50px 0;
+    }
+
+    .checkout{
+        padding: 0;
+
+        &-form{
+            flex-direction: column-reverse;
+            align-items: center;
+            
+            .checkout-items{
+                width: 100%;
+            }
+        }
+
+        &-items-container-item{
+            
+            img{
+                padding: 15px
+            }
+
+            &-title {
+                margin: 0 10px;
+            }
+        }
+    }
+
+    /* ------------------ FeedBack con los datos del comprador ------------------ */
+    .purchase-completed{
+        margin: 0 50px;
     }
 }

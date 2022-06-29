@@ -4,7 +4,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin: 50px 0;
+
     &-img{
         margin: 20px;
         max-width: 100%;
@@ -16,6 +19,7 @@
             max-width: 100%;
             width: 300px;
             padding: 10px;
+            height: 400px;
         }
     }
 
@@ -25,70 +29,37 @@
         width: 50%;
         margin: 20px 0;
         float: left;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
     }
 
     &-title{
-        font-size: 24px;
+        font-size: $h1-font-size;
+        margin-bottom: 30px;
     }
 
     &-price{
         margin: 20px 0;
-        font-size: 32px;
+        font-size: $h1-font-size;
         font-weight: 600;
         line-height: initial;
     }
 
-    .item-detail-payments{
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-        cursor: pointer;
-        margin: 20px 0;
-
-        .item-detail-cuotas{
-            border: 1px solid $color-silver;
-            padding: 5px 10px;
-            width: fit-content;
-
-            span{
-                margin: 0 5px;
-                text-transform: uppercase;
-                font-size: 12px;
-            }
-        }
-    
-        .item-detail-payment-methods{
-            text-transform: uppercase;
-            text-decoration: underline;
-            font-size: $smaller-font-size;
-            color: $color-silver-light;
-            fill: $color-silver-light;
-            margin: 15px 0;
-            width: fit-content;
-    
-            &:hover{
-                color: $color-6;
-                fill: 000;
-                opacity: 0.6;
-            }
-        }
-    }
-
-    .item-detail-counter-quantity{
+    &-counter-quantity{
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         span{
-            margin-bottom: 5px;
+            font-size: $h2-font-size;
+            margin-bottom: 30px;
             text-transform: uppercase;
-        }
-
-        .quantity-title{
-            margin-top:5px;
-            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .stock-button{
-            padding: 5px 10px;
-            border: 1px solid #212529;
+            @extend .css-button-fully-rounded--black;
             border-radius: 5px;
             font-weight: bold;
             font: 1.2rem;
@@ -117,16 +88,18 @@
         }
     }
 
-    .submit-button {
-        @extend .css-button-fully-rounded--black;
-        margin: 20px 0;
-        text-transform: uppercase;
-        font-weight: 500;
+    &-submit{
         width: 100%;
-    }  
 
+        &-button{
+            @extend .css-button-fully-rounded--black;
+            margin: 20px 0;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    }
 
-    .item-detail-submit-text{
+    &-submit-text{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -143,6 +116,60 @@
             font-size: $h3-font-size;
             cursor: pointer;
             font-weight: 600;
+        }
+    }
+}
+
+/* ----------------------- Mediaquery max-width 768px ----------------------- */
+@media only screen and (max-width: 768px){
+
+    .item-detail{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0;
+
+        &-description{
+            width:100%;
+        }
+
+        img{
+            width: 100%;
+            height:200px;
+        }
+
+        &-title{
+            margin-bottom: 10px;
+            font-size: $h2-font-size;
+        }
+
+        &-price{
+            font-size: $h2-font-size;
+        }
+
+        &-counter-quantity{
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+
+            span{
+                margin: 0 20px;
+                font-size: $h3-font-size;
+            }
+        }
+
+        &-submit-button{
+            width: auto;
+        }
+
+        &-submit-text{
+            flex-direction: column;
+            
+            span{
+                margin: 5px 0;
+            }
         }
     }
 }
