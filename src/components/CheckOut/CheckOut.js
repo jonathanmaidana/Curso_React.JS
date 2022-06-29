@@ -1,7 +1,7 @@
 import React from 'react';
 import './CheckOut.scss';
 import { collection, getFirestore, addDoc, writeBatch, doc } from 'firebase/firestore';
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';

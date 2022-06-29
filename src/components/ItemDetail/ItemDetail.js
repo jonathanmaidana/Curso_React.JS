@@ -1,7 +1,7 @@
 import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { useNavigate } from 'react-router-dom';
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 import '../../components/ItemDetail/ItemDetailStyle.scss';
 import { ToastContainer, toast, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Table } from 'react-bootstrap'
-import { CartContext } from '../../context/CartContext'
+import { CartContext } from '../../Context/CartContext'
 import { useNavigate } from 'react-router-dom'
 import '../Cart/CartStyle.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

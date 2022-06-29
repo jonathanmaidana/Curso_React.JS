@@ -1,7 +1,7 @@
 import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { CartProvider } from "./context/CartContext"
+import { CartProvider } from "./Context/CartContext"
 import Home from './views/Home/Home';
 import Products from "./views/Products/Products";
 import Category from './views/Category/Category';
