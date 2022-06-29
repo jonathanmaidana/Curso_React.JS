@@ -46,7 +46,7 @@ export default function Search() {
                 })
                 .map((item) => (
                 <div onClick={() => navigate(`/item/${item.id}`)} className="dropdown-row" key={item.title}>
-                    <img src={item.img} style={{width:'50px'}}/>
+                    <img src={item.img} style={{width:'50px'}} alt={item.title}/>
                     <div className="item-search">
                         <span className="item-search-title">{item.title}</span>
                         <span className="item-search-price">${item.price}</span>

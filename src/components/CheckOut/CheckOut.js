@@ -66,33 +66,6 @@ export default function CheckOut () {
             }
         }
     }
-    
-    /* --------------- Componente de presentacion para los inputs --------------- */
-    const Input = ({ label, placeholder, name, id, type }) => {
-        return(
-            <div className="inputs">
-                <label forHtml={id}>{label}</label>
-                <input 
-                name={name} 
-                type={type} 
-                id={id} 
-                placeholder={placeholder}
-                onChange={handleChange}
-                />
-            </div>
-        )
-    }
-
-    /* --------------- Componente de presentacion para los option --------------- */
-    const Option = ({text}) => {
-        return (
-            <div className="inputs">
-                <select>
-                    <option selected disabled>{text}</option>
-                </select>
-            </div>
-        )
-    }
 
     return send ? (
         <div className="checkout-page-container">
