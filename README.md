@@ -6,6 +6,10 @@
 
 ![Ecommerce app](https://user-images.githubusercontent.com/98171814/176560296-08cd9e00-81a3-46de-9f3d-e4866ccd4809.gif)
 
+## Deploy
+
+[Deploy](https://proyecto-final-reactjs-coderhuse-7ae2gxu1z-jonathanmaidana.vercel.app/category/camperas) : Visualizar el proyecto
+
 ## CORRER PROYECTO
 
 Para poder visulizar el proyecto se debe ejecutar el comando
