@@ -10,6 +10,14 @@
 
 [Deploy](https://proyecto-final-reactjs-coderhuse-7ae2gxu1z-jonathanmaidana.vercel.app/category/camperas) : Visualizar el proyecto
 
+## INSTALACION
+
+Instalar dependencias para posteriormente poder correrlo
+
+```bash
+ npm install
+```
+
 ## CORRER PROYECTO
 
 Para poder visulizar el proyecto se debe ejecutar el comando
