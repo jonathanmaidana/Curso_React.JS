@@ -6,21 +6,15 @@
     display: flex;
     justify-content: space-evenly;
     align-items :center;
-    height: 10vw;
+    height: auto;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: hsla(0, 0%, 17%, 1);
 
     .logo{
-        font-size: $header-font-size;
-        cursor: pointer;
-        transition: .3s ease;
-        text-decoration: none;
-        color: $color-2;
-
-        &:hover{
-            color: $color-3;
-        }
+        width: 100%;
+        max-width: 200px;
     }
 }
 

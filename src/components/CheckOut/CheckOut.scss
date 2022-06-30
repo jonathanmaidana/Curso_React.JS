@@ -188,9 +188,14 @@ h1{
         &-form{
             flex-direction: column-reverse;
             align-items: center;
+
+            .row{
+                width: auto;
+            }
             
             .checkout-items{
                 width: 100%;
+                margin: 20px 0;
             }
         }
 

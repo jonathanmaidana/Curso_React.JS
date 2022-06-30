@@ -75,10 +75,10 @@ export default function CartList ({title, text}){
                             </thead> 
                         </Table>    
                     </Col>
-                    <div className="cart-checkout-button-container">
+                </Row>
+                <div className="cart-checkout-button-container">
                         <button className="cart-checkout-button" onClick={() => navigate(`/checkout`)}>Finalizar compra</button>
                     </div>
-                </Row>
             </Container>
         )
 }

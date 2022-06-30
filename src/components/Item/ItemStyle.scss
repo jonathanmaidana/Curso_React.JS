@@ -8,6 +8,7 @@
 .item-img{
     position: relative;
     cursor: pointer;
+    padding: 1rem;
 }
 
 .item-stock-img{
@@ -68,7 +69,8 @@
 /* ------------------------------- mediaquerys max-width 768px ------------------------------ */
 @media only screen and (max-width: 768px) {
     .item-img{
-        padding: 50px;
+        padding: 15px;
+        height: 350px;
     } 
 
     .card-body{

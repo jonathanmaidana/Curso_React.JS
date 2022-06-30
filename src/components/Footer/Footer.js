@@ -12,7 +12,7 @@ export default function Footer () {
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-container-logo">
-                    <h1 onClick={() => navigate('/')}>LOGO</h1>
+                    <img src="../../images/logo.png" alt="Logo" onClick={() => navigate('/')}/>
                 </div>
             </div>
             <div className="footer-container">

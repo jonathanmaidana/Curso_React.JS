@@ -8,10 +8,11 @@ export default function Header(){
 
     return (
         <header className="header" expand="lg">
-            <Link to="/" className="logo">
-                <div>
-                    LOGO
+            <Link to="/">
+                <div className="logo">
+                <img src="../../images/logo.png" alt="Logo"/>
                 </div>
+                
             </Link>
             <SearchController/>
         </header>

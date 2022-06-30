@@ -36,6 +36,12 @@ footer{
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
+
+            img{
+                max-width: 200px;
+                cursor: pointer;
+            }
 
             h1{
                 cursor: pointer;
@@ -47,6 +53,7 @@ footer{
             display: flex;
             flex-direction: row;
             justify-content: center;
+            flex-wrap: wrap;
 
             svg{
                 font-size: 26px;
@@ -72,7 +79,7 @@ footer{
         .footer-container{
             width: 100%;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             flex-direction: column;
             margin: 5px 0;
 
@@ -89,16 +96,14 @@ footer{
             }
 
             &-social{
-    
                 svg{
-                    font-size: 20px
+                    font-size: 20px;
                 }
             }
 
             &-contact{
-
                 li{
-                    font-size: $small-font-size;
+                    font-size: $h1-font-size;
                 }
             }
         }

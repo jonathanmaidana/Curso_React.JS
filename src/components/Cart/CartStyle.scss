@@ -70,3 +70,29 @@ tbody{
         padding: 10px;
     }
 }
+
+/* ----------------------- Mediaquery max-width 768px ----------------------- */
+@media (max-width: 768px){
+
+    thead{
+        tr{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: center;
+
+            td{
+                border-bottom-width: 0;
+            }
+        }
+    }
+    tbody{
+        tr{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ccc;
+        }
+    }
+}
