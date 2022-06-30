@@ -8,7 +8,7 @@
 
 ## Deploy
 
-[Deploy](https://proyecto-final-reactjs-coderhuse-7ae2gxu1z-jonathanmaidana.vercel.app/category/camperas) : Visualizar el proyecto
+[Deploy](https://proyecto-final-react-js-coderhouse.vercel.app/) : Visualizar el proyecto
 
 ## INSTALACION
 
